@@ -52,6 +52,16 @@ The most basic use of the scheduler is to run a command non-interactively. Any c
 of commands) that you want to run on the cluster is called a *job*, and the process of using a
 scheduler to run the job is called *batch job submission*.
 
+> ## Project codes
+> 
+> Project codes allow the resources used to be recorded to a project and
+> provides information on what research is used which resources.  It allows
+> for focussing attention on certain projects if issues are spotted.
+>
+> Can you find your available project codes on [mySCW](https://my.supercomputing.wales)?
+{: .challenge}
+
+
 In this case, the job we want to run is just a shell script. Let's create a demo shell script to 
 run as a test.
 
@@ -160,7 +170,7 @@ Fantastic, we've successfully changed the name of our job!
 > constantly check on the status of our job with `{{ site.sched_status }}`. Looking at the
 > man page for `{{ site.sched_submit }}`, can you set up our test job to send you an email
 > when it finishes?
-> >
+> 
 {: .challenge}
 
 ### Resource requests
@@ -233,11 +243,10 @@ walltime so that it runs long enough for you to cancel it before it is killed!).
 {: .output}
 
 Now cancel the job with it's job number. Absence of any job info indicates that the job has been
-successfully cancelled.
+successfully cancelled.  Note that it might take a minute for the job to disappear from the queue.
 
 ```
 {% include /snippets/13/del_job.snip %}
-... Note that it might take a minute for the job to disappear from the queue ...
 {{ site.host_prompt }} {{ site.sched_status }} {{ site.sched_flag_user }}
 ```
 {: .bash}
