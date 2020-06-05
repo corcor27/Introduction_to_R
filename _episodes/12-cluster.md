@@ -133,9 +133,9 @@ been restarted.
 > Try to find out the number of CPUs and amount of memory available on your personal computer.
 {: .challenge}
 
-> ## Explore The Head Node
+> ## Explore The Login Node
 >
-> Now we'll compare the size of your computer with the size of the head node: To see the number of
+> Now we'll compare the size of your computer with the size of the login node: To see the number of
 > processors, run:
 >
 > ```
@@ -172,10 +172,10 @@ been restarted.
 
 {% include /snippets/12/explore.snip %}
 
-> ## Compare Your Computer, the Head Node and the Worker Node
+> ## Compare Your Computer, the Login Node and the Worker Node
 >
 > Compare your laptop's number of processors and memory with the numbers you see on the cluster 
-> head node and worker node. Discuss the differences with your neighbor. What implications do
+> login node and worker node. Discuss the differences with your neighbor. What implications do
 > you think the differences might have on running your research work on the different systems
 > and nodes?
 {: .challenge}
