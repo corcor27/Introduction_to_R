@@ -71,7 +71,7 @@ run as a test.
 > cluster or just our login node?
 >
 >```
->#!/bin/bash
+>#!/bin/bash --login
 >
 > echo 'This script is running on:'
 > hostname
@@ -133,7 +133,7 @@ resources we must customize our job script.
 
 Comments in UNIX (denoted by `#`) are typically ignored. But there are exceptions. For instance the
 special `#!` comment at the beginning of scripts specifies what program should be used to run it
-(typically `/bin/bash`). Schedulers like {{ site.workshop_sched_name }} also have a special comment
+(typically `/bin/bash`) possibly with switches such as `/bin/bash --login` to select a certain behaviour of the program. Schedulers like {{ site.workshop_sched_name }} also have a special comment
 used to denote special scheduler-specific options. Though these comments differ from scheduler to
 scheduler, {{ site.workshop_sched_name }}'s special comment is `{{ site.sched_comment }}`.
 Anything following the `{{ site.sched_comment }}` comment is interpreted as an
@@ -145,7 +145,7 @@ Let's illustrate this by example. By default, a job's name is the name of the sc
 Submit the following job (`{{ site.sched_submit }} {{ site.sched_submit_options }} example-job.sh`):
 
 ```
-#!/bin/bash
+#!/bin/bash --login
 {{ site.sched_comment }} {{ site.sched_flag_name }} new_name
 
 echo 'This script is running on:'

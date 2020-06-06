@@ -84,7 +84,7 @@ hear people call them *servers*, *computers* and *machines*). On a cluster, ther
 types of nodes for different types of tasks. The node where you are right now is called the *head
 node*, *login node* or *submit node*. A login node serves as an access point to the cluster. As a
 gateway, it is well suited for uploading and downloading files, setting up software, and running
-quick tests. It should never be used for doing actual work.
+quick tests. **It should never be used for doing actual work**.
 
 The real work on a cluster gets done by the *worker* (or *compute*) *nodes*. Worker nodes come in
 many shapes and sizes, but generally are dedicated to long or hard tasks that require a lot of
