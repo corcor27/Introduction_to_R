@@ -28,3 +28,8 @@ Note that you must restart your computer to complete the installation.
 **Linux**
 
 Linux users do not need to install anything, you should be set!
+
+## File Transfer
+
+A cross-platform tool FileZilla can be installed from [https://filezilla-project.org](https://filezilla-project.org).
+This will allow easy file transfer to and from the remote systems.
