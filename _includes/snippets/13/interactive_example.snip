@@ -2,7 +2,7 @@
 `hostname` command with `srun`. (We can cancel an `srun` job with `Ctrl-c`.)
 
 ```
-{{ site.host_prompt }} srun hostname
+{{ site.host_prompt }} srun {{ site.sched_submit_options }} hostname
 ```
 {: .bash}
 ```
@@ -15,7 +15,7 @@ script, these options are specified on the command-line when starting a job. To 
 uses 2 CPUs for instance, we could use the following command:
 
 ```
-{{ site.host_prompt }} srun -c 2 echo "This job will use 2 CPUs."
+{{ site.host_prompt }} srun {{ site.sched_submit_options }} -c 2 echo "This job will use 2 CPUs."
 ```
 {: .bash}
 ```
@@ -32,7 +32,7 @@ an analysis or we are attempting to debug something that went wrong with a previ
 Fortunately, SLURM makes it easy to start an interactive job with `srun`:
 
 ```
-{{ site.host_prompt }} srun --pty bash
+{{ site.host_prompt }} srun {{ site.sched_submit_options }} --pty bash
 ```
 {: .bash}
 
@@ -53,7 +53,7 @@ new location, in this case the compute node we are logged on. You can also verif
 >
 > If your cluster has the [slurm-spank-x11](https://github.com/hautreux/slurm-spank-x11) plugin
 > installed, you can ensure X11 forwarding within interactive jobs by using the `--x11` option 
-> for `srun` with the command `srun --x11 --pty bash`.
+> for `srun` with the command `srun {{ site.sched_submit_options }} --x11 --pty bash`.
 {: .challenge}
 
 When you are done with the interactive job, type `exit` to quit your session.
