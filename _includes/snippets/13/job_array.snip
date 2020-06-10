@@ -3,6 +3,10 @@
 Job arrays allow many jobs to run from the same job script but each run has different environment variables to allow different actions to take place.
 For example to process a list of files each job will be given an index that gives it a file to process.
 
+Due to the possibility to submit many hundreds of jobs, to get access to job arrays you will need to **request access** to the feature and provide
+us with the maximum number of job arrays you may want to submit.  This will add you and your project code to a Quality of Service (QOS) in SLURM
+to special limits for your particular job array request.
+
 ```
 [{{ site.host_prompt }} {{ site.sched_submit }} {{ site.sched_submit_options }} --array=1-10 example-job.sh
 ```
