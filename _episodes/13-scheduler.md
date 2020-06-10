@@ -270,4 +270,6 @@ tasks as a one-off with `{{ site.sched_interactive }}`.
 
 {% include /snippets/13/interactive_example.snip %}
 
+{% include /snippets/13/job_array.snip %}
+
 {% include links.md %}
