@@ -7,6 +7,7 @@ questions:
 objectives:
 - "Understand how to load and use a software package."
 keypoints:
+- "Discover available software with `module avail`
 - "Load software with `module load softwareName`"
 - "Unload software with `module purge`"
 - "The module system handles software versioning and package conflicts for you automatically."
