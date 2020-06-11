@@ -91,7 +91,7 @@ $ df -h /scratch
 
 ~~~
 Filesystem                                Size  Used Avail Use% Mounted on
-172.2.1.51@o2ib:172.2.1.52@o2ib:/scratch  692T   57T  635T   9% /scratch
+172.2.1.51@o2ib:172.2.1.52@o2ib:/scratch  1.2P  606T  548T  53% /scratch
 ~~~
 {: .output}
 
