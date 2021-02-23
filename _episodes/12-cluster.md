@@ -40,6 +40,27 @@ Go ahead and log in to the cluster: {{ site.host_name }} at {{ site.host_locatio
 Remember to replace `yourUsername` with the username supplied by the instructors. You will be asked for
 your password. But watch out, the characters you type are not displayed on the screen.
 
+> ## How do I specify common `ssh` options
+> 
+> To reduce issues with connecting it can be useful to fix settings to be used.
+> For example `ssh` tried every key in your `~/.ssh` directory, and can trigger the
+> banning of your machine from accessing the system.
+> 
+> On a Mac/Linux laptop/desktop you can add settings to `$HOME/.ssh/config` such as:
+> 
+> ```
+> Host hawk
+> Hostname hawklogin.cf.ac.uk
+> IdentityFile ~/.ssh/id_rsa
+> User c.sistg1
+> ForwardX11 yes
+> ForwardX11Trusted yes
+> ```
+> {: .code}
+> 
+> On Windows depending on software these settings can be set in the menu settings.
+{: .callout}
+
 You are logging in using a program known as the secure shell or `ssh`. 
 This establishes a temporary encrypted connection between your laptop and `{{ site.host_login }}`.
 The word before the `@` symbol, e.g. `yourUsername` here, is the user account name that Lola has access 
