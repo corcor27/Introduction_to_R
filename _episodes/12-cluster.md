@@ -51,7 +51,6 @@ your password. But watch out, the characters you type are not displayed on the s
 > ```
 > Host hawk
 > Hostname hawklogin.cf.ac.uk
-> IdentityFile ~/.ssh/id_rsa
 > User c.username
 > ForwardX11 yes
 > ForwardX11Trusted yes
