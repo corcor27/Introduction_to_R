@@ -42,9 +42,9 @@ your password. But watch out, the characters you type are not displayed on the s
 
 > ## How do I specify common `ssh` options
 > 
-> To reduce issues with connecting it can be useful to fix settings to be used.
-> For example `ssh` tried every key in your `~/.ssh` directory, and can trigger the
-> banning of your machine from accessing the system.
+> To reduce issues with connecting it can be useful to fix the settings to be used.
+> For example `ssh` will try every key in your `~/.ssh` directory, and can trigger the
+> banning of your machine from accessing the system if you have more than 1 key.
 > 
 > On a Mac/Linux laptop/desktop you can add settings to `$HOME/.ssh/config` such as:
 > 
@@ -52,6 +52,7 @@ your password. But watch out, the characters you type are not displayed on the s
 > Host hawk
 > Hostname hawklogin.cf.ac.uk
 > User c.username
+> IdentityFile ~/.ssh/id_rsa-hawk
 > ForwardX11 yes
 > ForwardX11Trusted yes
 > ```
