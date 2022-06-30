@@ -59,6 +59,9 @@ your password. But watch out, the characters you type are not displayed on the s
 > {: .code}
 > 
 > On Windows depending on software these settings can be set in the menu settings.
+> 
+> Alternatively use `PreferredAuthentications password` to force ssh to always use only a password.  This may be needed if ssh keys are available 
+> on your own computer but not used for Hawk and can trigger the banning of your machine when attempts with the keys are made.
 {: .callout}
 
 You are logging in using a program known as the secure shell or `ssh`. 
