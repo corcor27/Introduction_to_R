@@ -36,7 +36,7 @@ Here's a synopsis of filesystems on Hawk in Cardiff:
 |Home|/home/user.name|50GB|420TB|Yes|NFS|
 |Long-term project|/home/scwXXXX|Negotiable|12TB (same disk as home)|Yes|NFS|
 |Short-term project|/scratch/scwXXXX|Negotiable|1200TB (same disk as home)|Yes|Lustre|
-|Scratch|/scratch/user.name|5TB + 3million files|1200TB|No|Lustre|
+|Scratch|/scratch/user.name|3TB + 3million files|1200TB|No|Lustre|
 
 **Important!! Ensure that you don't store anything longer than necessary on scratch, this can negatively affect other people’s jobs on the system.**
 
@@ -62,7 +62,7 @@ chnfs-ib:/nfshome/store01
 
 SCRATCH DIRECTORY c.username
      Filesystem    used   quota   limit   grace   files   quota   limit   grace
-       /scratch  1.199T      0k      5T       -  383671       0 3000000       -
+       /scratch  1.199T      0k      3T       -  383671       0 3000000       -
 
 SHARED DIR scw1001
      Filesystem   space   quota   limit   grace   files   quota   limit   grace
