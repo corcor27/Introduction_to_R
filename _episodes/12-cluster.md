@@ -62,6 +62,9 @@ your password. But watch out, the characters you type are not displayed on the s
 > 
 > Alternatively use `PreferredAuthentications password` to force ssh to always use only a password.  This may be needed if ssh keys are available 
 > on your own computer but not used for Hawk and can trigger the banning of your machine when attempts with the keys are made.
+>
+> Other option is `SetEnv LANG=C` can be useful if a locale setting on your desktop is not supported on Hawk for some reason and causes text encoding 
+> issues.
 {: .callout}
 
 You are logging in using a program known as the secure shell or `ssh`. 
