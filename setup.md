@@ -33,3 +33,9 @@ Linux users do not need to install anything, you should be set!
 
 A cross-platform tool FileZilla can be installed from [https://filezilla-project.org](https://filezilla-project.org).
 This will allow easy file transfer to and from the remote systems.
+
+## Obtaining a user account
+
+This course is especially useful for user joining Hawk and therefore it is assumed 
+that you already have a user account. If you don't, you can easily request one
+following the instructions in our [portal](https://portal.supercomputing.wales/index.php/getting-access/).

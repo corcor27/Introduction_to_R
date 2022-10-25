@@ -45,7 +45,7 @@ software library available for it to work.
 
 Environment modules are the solution to these problems.
 A *module* is a self-contained description of a software package - 
-it contains the settings required to run a software packace 
+it contains the settings required to run a software package 
 and, usually, encodes required dependencies on other software packages.
 
 There are a number of different environment module implementations commonly
