@@ -84,8 +84,14 @@ If you completed the previous challenge successfully, you probably realise that 
 distinction between running the job through the scheduler and just "running it". To submit this job
 to the scheduler, we use the `{{ site.sched_submit }}` command.
 
+Hawk:
 ```
 [{{ site.host_prompt }} {{ site.sched_submit }} {{ site.sched_submit_options }} example-job.sh
+```
+{: .bash}
+Sunbird:
+```
+[{{ site.host_prompt2 }} {{ site.sched_submit }} {{ site.sched_submit_options2 }} example-job.sh
 ```
 {: .bash}
 ```
@@ -95,7 +101,7 @@ to the scheduler, we use the `{{ site.sched_submit }}` command.
 
 And that's all we need to do to submit a job. Our work is done -- now the scheduler takes over and
 tries to run the job for us. While the job is waiting to run, it goes into a list of jobs called 
-the *queue*. To check on our job's status, we check the queue using the command
+the *queue*. To check on our job's status, we check the queue using the command (Same for both sites)
 `{{ site.sched_status }} {{ site.sched_flag_user }}`.
 
 ```
@@ -115,9 +121,17 @@ reruns a given command at 2-second intervals. This is too frequent, and will lik
 administrator. You can change the interval to a more reasonable value, for example 60 seconds, with the
 `-n 60` parameter. Let's try using it to monitor another job.
 
+Hawk:
 ```
 {{ site.host_prompt }} {{ site.sched_submit }} {{ site.sched_submit_options }} example-job.sh
 {{ site.host_prompt }} watch -n 60 {{ site.sched_status }} {{ site.sched_flag_user }}
+```
+{: .bash}
+
+Sunbird:
+```
+{{ site.host_prompt2 }} {{ site.sched_submit }} {{ site.sched_submit_options2 }} example-job.sh
+{{ site.host_prompt2 }} watch -n 60 {{ site.sched_status }} {{ site.sched_flag_user }}
 ```
 {: .bash}
 
@@ -142,7 +156,7 @@ instruction to the scheduler.
 Let's illustrate this by example. By default, a job's name is the name of the script, but the
 `{{ site.sched_flag_name }}` option can be used to change the name of a job.
 
-Submit the following job (`{{ site.sched_submit }} {{ site.sched_submit_options }} example-job.sh`):
+Submit the following job Hawk:(`{{ site.sched_submit }} {{ site.sched_submit_options }} example-job.sh`), Sunbird:(`{{ site.sched_submit }} {{ site.sched_submit_options2 }} example-job.sh`):
 
 ```
 #!/bin/bash --login
@@ -205,10 +219,20 @@ minutes.
 
 Submit the job and wait for it to finish. Once it is has finished, check the log file.
 
+Hawk:
 ```
 {{ site.host_prompt }} {{ site.sched_submit }} {{ site.sched_submit_options }} example-job.sh
 {{ site.host_prompt }} watch -n 60 {{ site.sched_status }} {{ site.sched_flag_user }}
 {% include /snippets/13/long_job_cat.snip %}
+```
+{: .bash}
+
+Sunbird:
+
+```
+{{ site.host_prompt2 }} {{ site.sched_submit }} {{ site.sched_submit_options2 }} example-job.sh
+{{ site.host_prompt2 }} watch -n 60 {{ site.sched_status }} {{ site.sched_flag_user }}
+{{ site.host_prompt2 }} cat slurm-38193.out
 ```
 {: .bash}
 ```
@@ -232,9 +256,17 @@ Sometimes we'll make a mistake and need to cancel a job. This can be done with t
 command. Let's submit a job and then cancel it using its job number (remember to change the 
 walltime so that it runs long enough for you to cancel it before it is killed!).
 
+Hawk:
 ```
 {{ site.host_prompt }} {{ site.sched_submit }} {{ site.sched_submit_options }} example-job.sh
 {{ site.host_prompt }} {{ site.sched_status }} {{ site.sched_flag_user }}
+```
+{: .bash}
+
+Sunbird:
+```
+{{ site.host_prompt2 }} {{ site.sched_submit }} {{ site.sched_submit_options2 }} example-job.sh
+{{ site.host_prompt2 }} {{ site.sched_status2 }} {{ site.sched_flag_user }}
 ```
 {: .bash}
 ```
@@ -243,7 +275,7 @@ walltime so that it runs long enough for you to cancel it before it is killed!).
 {: .output}
 
 Now cancel the job with it's job number. Absence of any job info indicates that the job has been
-successfully cancelled.  Note that it might take a minute for the job to disappear from the queue.
+successfully cancelled.  Note that it might take a minute for the job to disappear from the queue.(same for both systems)
 
 ```
 {% include /snippets/13/del_job.snip %}

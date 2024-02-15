@@ -111,7 +111,7 @@ hand side.
 
 To connect to the cluster, we'll just need to enter our credentials at the top of the screen:
 
-* Host: `sftp://{{ site.host_login }}`
+* Host: `sftp://{{ site.host_login }}` or `sftp://{{ site.host_login2 }}`
 * User: Your cluster username
 * Password: Your cluster password
 * Port: (leave blank to use the default port)
@@ -124,7 +124,7 @@ to transfer files.
 
 You can copy files to/from your Supercomputing Wales home and scratch locations using the secure copy protocol (SCP) or secure file transfer protocol (SFTP) and connecting to Hawk. 
 
-Open filezilla and type ```sftp://hawklogin.cf.ac.uk``` into the host box. Enter your username and password in the username/password boxes.
+Open filezilla and type ```sftp://hawklogin.cf.ac.uk``` or ```sftp://sunbird.swansea.ac.uk``` into the host box. Enter your username and password in the username/password boxes.
 
 ![Transferring files using FileZilla](../fig/filezilla1.png)
 

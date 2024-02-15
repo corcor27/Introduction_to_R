@@ -10,7 +10,7 @@ Currently Loaded Modulefiles:
   2) compiler/intel/2018/2
 ```
 {: .output}
-
+Hawk:
 ```
 {{ site.host_prompt }} module load plink
 {{ site.host_prompt }} module list
@@ -24,12 +24,34 @@ Currently Loaded Modulefiles:
 ```
 {: .output}
 
-So in this case, loading the `plink` module (a bioinformatics software package), also loaded
-`mkl/2018/3` as well. Let's try unloading the `plink` package.
+Sunbird:
+```
+{{ site.host_prompt2 }} module load febio
+{{ site.host_prompt2 }} module list
+```
+{: .bash}
+```
+Currently Loaded Modulefiles:
+  1) system/auto             4) mkl/2018/3
+  2) compiler/intel/2018/2   5) febio/4.0
+  3) python/3.7.0
+```
+{: .output}
 
+
+So in this case, loading the `plink` module (a bioinformatics software package) or `febio` module (medical application software package), also loaded
+`mkl/2018/3` as well. Let's try unloading the `plink` or `febio` package.
+
+Hawk:
 ```
 {{ site.host_prompt }} module unload plink
 {{ site.host_prompt }} module list
+```
+{: .bash}
+Sunbird:
+```
+{{ site.host_prompt2 }} module unload febio
+{{ site.host_prompt2 }} module list
 ```
 {: .bash}
 ```

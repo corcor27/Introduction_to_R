@@ -31,12 +31,17 @@ purpose, and are used to accomplish tasks that might otherwise be too big for an
 
 ## Logging in
 
-Go ahead and log in to the cluster: {{ site.host_name }} at {{ site.host_location }}.
+Go ahead and log in to the Hawk cluster: {{ site.host_name }} at {{ site.host_location }}.
 ```
 {{ site.local_prompt }} ssh yourUsername@{{ site.host_login }}
 ```
 {: .bash}
 
+If from Aberystwyth, try the Sunbird cluster instead: {{ site.host_name2 }} at {{ site.host_location2 }}.
+```
+{{ site.local_prompt }} ssh a.yourUsername@{{ site.host_login2 }}
+```
+{: .bash}
 Remember to replace `yourUsername` with the username supplied by the instructors. You will be asked for
 your password. But watch out, the characters you type are not displayed on the screen.
 
@@ -104,6 +109,18 @@ notice that the current hostname is also part of our prompt!)
 ```
 {: .output}
 
+For Sunbird:
+
+```
+{{ site.host_prompt2}} hostname
+```
+{: .bash}
+
+```
+{{ site.host_name2 }}
+```
+{: .output}
+
 ## Nodes
 
 Individual computers that compose a cluster are typically called *nodes* (although you will also
@@ -123,14 +140,20 @@ learn more about how to use the scheduler to submit jobs next, but for now, it c
 more information about the worker
 nodes.
 
-For example, we can view all of the worker nodes with the `{{ site.sched_info }}` command.
+For example, we can view all of the worker nodes with the `{{ site.sched_info }}` command **(Same for both sites)**.
 
 ```
 {{ site.host_prompt}} {{ site.sched_info }}
 ```
 {: .bash}
+Hawk:
 ```
 {% include /snippets/12/info.snip %}
+```
+{: .output}
+Sunbird:
+```
+{% include /snippets/12/info_sunbird.snip %}
 ```
 {: .output}
 
@@ -160,7 +183,7 @@ been restarted.
 > Try to find out the number of CPUs and amount of memory available on your personal computer.
 {: .challenge}
 
-> ## Explore The Login Node
+> ## Explore The Login Node (Same for both sites)
 >
 > Now we'll compare the size of your computer with the size of the login node: To see the number of
 > processors, run:
@@ -180,7 +203,7 @@ been restarted.
 
 
 
-> ## Getting more information
+> ## Getting more information (Same for both sites)
 >
 > You can get more detailed information on both the processors and memory by using different commands.
 >
