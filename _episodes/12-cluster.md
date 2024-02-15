@@ -99,6 +99,7 @@ entire computing cluster. So what's really happening? What computer have we logg
 of the current computer we are logged onto can be checked with the `hostname` command. (You may also
 notice that the current hostname is also part of our prompt!)
 
+Hawk:
 ```
 {{ site.host_prompt}} hostname
 ```
@@ -109,7 +110,7 @@ notice that the current hostname is also part of our prompt!)
 ```
 {: .output}
 
-For Sunbird:
+Sunbird:
 
 ```
 {{ site.host_prompt2}} hostname
