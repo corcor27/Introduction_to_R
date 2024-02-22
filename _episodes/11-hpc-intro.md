@@ -1,109 +1,77 @@
 ---
-title: "Why Use a Cluster?"
+title: "RStudio Layout, navigating the IDE"
 teaching: 15
 exercises: 5
 questions:
-- "Why would I be interested in High Performance Computing (HPC)?"
-- "What can I expect to learn from this course?"
+- "How is RStudio layed out?"
+- "What does everything do?"
 objectives:
-- "Be able to describe what an HPC system is"
-- "Identify how an HPC system could benefit you."  
+- "Be familair with the panes contained with RStudio"
+- "Be confident creating a new project and new script files"  
 keypoints:
-- "High Performance Computing (HPC) typically involves connecting to very large computing systems
-  elsewhere in the world."
-- "These other systems can be used to do work that would either be impossible or much slower or
-  smaller systems."
-- "The standard method of interacting with such systems is via a command line interface called
-  Bash."
+- "R and RStudio are not the same thing. RStudio is an IDE that provides you with a convinient way to manage R projects and R is the underlying language that enables RStudio."
+- "You will not learn everything about RStudio in a day, there are a huge number of tools available to you in RStudio. "
+- "It is your responsibility to explore, practice and learn to get better."
 ---
 
-Frequently, research problems that use computing can outgrow the desktop or laptop computer where
-they started:
+## Starting a new project:
 
-* A statistics student wants to cross-validate their model. This involves running the model 1000
-  times -- but each run takes an hour. Running on their laptop will take over a month!
+Let us start by exploring the major features of we will use for this course in RStudio. Our first aim is to become more familiar with the interface. Start by generate a new project (name it ‘my_first_r_project’). Next, open a new script file (name it 'my_first_r_script’). 
 
-* A genomics researcher has been using small datasets of sequence data, but soon will be receiving
-  a new type of sequencing data that is 10 times as large. It's already challenging to open the
-  datasets on their computer -- analyzing these larger datasets will probably crash it.
+{% include figure.html max-width="30%" file="/fig/rstudioIDE.png" 
+alt="RStudio pane layout on first initialisation" caption="RStudio layout" %}
 
-* An engineer is using a fluid dynamics package that has an option to run in parallel. So far, they
-  haven't used this option on their desktop, but in going from 2D to 3D simulations, simulation 
-  time has more than tripled and it might be useful to take advantage of that feature.
+## Menu Bar
 
-In all these cases, what is needed is access to more computers than can be used at the same time.
+The Menu bar controls some of the major actions available in RStudio. The most common are creating, saving and loading projects and scripts. If you look through the drop-down menus you will notice that many procedures have shortcuts allocated. The more familiar you get with RStudio the more you will start to take advantage of these shortcuts and possibly create or remap your own shortcuts. 
 
-> # And what do you do?
-> 
-> Talk to your neighbour, office mate or [rubber duck](https://rubberduckdebugging.com/) about your
-> research. How does computing help you do your research? 
-> How could more computing help you do more or better research?
-{: .challenge }
+## Bottom left
+## Console
+
+This is the console pane. It should be prepopulated with text detailing things the version of R you are currently using, among other things. The console is your primary interface with the R programming language. You will use it often for inputting prompts and displaying outputs.  
+
+## Top left
+
+You should see the script pane in this location. It provides a powerful and user-friendly environment for writing, editing, and managing R code and other documents. You can write commands into the script pane and run them by placing your cursor at the beginning of the line and press the run button.
+
+> ## Question: Why do we need the console and the script pane when they do similar things?
+> Although there is some overlap between the two, when we look closer, we will find there are different capabilities of both
+> panes. To clarify the situation using a kitchen analogy; imagine the console is your kitchen worktop, you could try out 
+>different techniques, or perform specific tasks. Your script pane is akin to a recipe book, a place to create a collection of 
+>work that you want to perform time and time again.  
+
+## How these two panes influence your workflow options: 
+
+Much of your initial learning time in R will be spent in the R interactive console. This is where you can test out lines of code and it can be a useful environment to try out ideas. This way of working is successful when conducting small task and initially starting off. It can quickly become inefficient for large tasks with more complex structure. Writing scripts will allow you to better manage the workflow of more complicated projects. Storing your code in scripts allows for easier maintenance, collaboration, and code clarity.
+
+## Top Right
+## Environment
+
+The environment pane provides a convenient way to inspect, manage, and interact with the objects and variables in your R environment. This view should help give you an insight into your data and allow you to interact with it more efficiently.
+
+## History
+
+The History pane in RStudio provides a convenient way to review and manage your command history. It has a button that pushes a selected command into your script pane that you may find handy.
+
+## Bottom Right 
+## Files
+
+The files pane in RStudio provides a straightforward way to navigate and manage files and directories within your project. 
+
+## Plots
+
+The plots pane in RStudio is used to interact with graphical output from your R code. You can visualise, explore, manage, and export data plots.
+
+## Help
+
+Serves as a valuable resource for learning about R programming, exploring package functionality, troubleshooting issues, and finding answers to your questions. 
+
+## Important to explore
+
+Clearly there are many more features to RStudio we have not covered in this brief introduction. If you continue to use RStudio you will encounter tools that you will find particularly useful for your specific needs. 
 
 
-# Doing Analysis or Running Code
 
-## A standard Laptop for standard tasks
-
-Today, people coding or analysing data typically work with laptops.
- 
-{% include figure.html url="" max-width="20%" file="/fig/200px-laptop-openclipartorg-aoguerrero.svg"
- alt="A standard laptop" caption="" %}
-
-Let's dissect what resources programs running on a laptop require:
-- the keyboard and/or touchpad is used to tell the computer what to do (**Input**)
-- the internal computing resources **Central Processing Unit** and **Memory** perform calculation
-- the display depicts progress and results (**Output**)
-
-Schematically, this can be reduced to the following:
-
-{% include figure.html max-width="30%" file="/fig/Simple_Von_Neumann_Architecture.svg" 
-alt="Schematic of how a computer works" caption="" %}
-
-
-## When tasks take too long
-
-When the task to solve become heavy on computations, the operations are typically out-sourced 
-from the local laptop or desktop to elsewhere. Take for example the task to find the directions for
-your next business trip. The capabilities of your laptop are typically not enough to calculate 
-that route spontaneously. So you use website, which in turn runs on a server that is almost 
-exclusively not in the same room as you are.
-
-{% include figure.html url="" max-width="20%" file="/fig/servers-openclipartorg-ericlemerdy.svg" 
-alt="A rack half full with servers" caption="" %}
-
-Note here, that a server is mostly a noisy computer mounted into a rack cabinet which in turn 
-resides in a data center. The internet made it possible that these data centers do not require to 
-be nearby your laptop. What people call **the cloud** is mostly a web-service where you can rent 
-such servers by providing your credit card details and by clicking together the specs of this 
-remote resource.
-
-The server itself has no direct display or input methods attached to it. But most importantly, it 
-has much more storage, memory and compute capacity than your laptop will ever have. In any case,
-you need a local device (laptop, workstation, mobile phone or tablet) to interact with this remote 
-machine, people typically call 'a server'. 
-
-## When one server is not enough
-
-If the computational task or analysis to complete is daunting for a single server, larger 
-agglomerations of servers are used. These go by the name of clusters or super computers.
-
-{% include figure.html url="" max-width="20%" 
-file="/fig/serverrack-openclipartorg-psteinb-basedon-ericlemerdy.svg" alt="A rack with servers"
-caption="" %}
-
-The methodology of providing the input data, communicating options and flags as well as retrieving
-the results is quite opposite to using a plain laptop. Moreover, using a GUI style interface is 
-often discarded in favor of using the command line. This imposes a double paradigm shift for 
-prospect users:
-
-1. they work with the command line (not a GUI style user interface)
-2. they work with a distributed set of computers (called nodes)
-
-> # I've never used a server, have I?
-> 
-> Take a minute and think about which of your daily interactions with a computer may require a 
-> remote server or even cluster to provide you with results. 
 {: .challenge }
 
 {% include links.md %}
