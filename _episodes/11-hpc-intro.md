@@ -1,5 +1,5 @@
 ---
-title: "RStudio Layout, navigating the IDE"
+title: "RStudio Layout, navigating the IDE, and setting up a project"
 teaching: 15
 exercises: 5
 questions:
@@ -70,4 +70,27 @@ Much of your initial learning time in R will be spent in the R interactive conso
 >## Important to explore and practice
 >Clearly there are many more features to RStudio we have not covered in this brief introduction. If you spend time researching and practicing using R and RStudio you will start to collect tools that you will find useful for your research goals. Don't be afraid to try and fail. 
 {: .challenge }
+
+### Project management
+
+> ## Question: We have created a project in RStudio but why is it important to manage our work and what can go wrong if we don’t? 
+> Typical problems caused by poor project management. 
+
+1. Poor maintainability – You may remember the ad-hoc system you used for naming and organising files and folders but when you come back to a project a week, a month or a year later will you still remember? If someone is collaborating with you will it make any sense to them? 
+
+2. Data corruption – Defensive steps (e.g., naming convention, back-ups, read only files) will protect your data. It can be very easy to accidently modify data that should be static. Losing/corrupting data can be catastrophic for projects.
+
+There is no ‘best’ way to manage a project, there are general principles that will make your project easier to manage. We will touch on many aspects of this during the course however a full account of these areas is outside of the scope of this session.
+
+1. Segment files sensibly: Create clearly labelled folders/sub-folders to group similar files. This will make finding and identifying files easier.  
+
+2. Read only data: Any original data should be read-only so it cannot be accidently modified.  
+
+3. Separate functions: Separating the project specific code from more generic code that could be reused in other projects will improve your efficiency when starting new projects.  
+
+4. Version control: Version control systems (VCS) are a tool that facilitate multiple users collaborating on the same project. They have a wide set of tools but are commonly used to manage reverting files to previous states, comparing changes, and managing versions. Git is the most widely used version control system. 
+
+5. Backup: Ensuring your data and your project is backed up is vital. Consider a minimum of one local-backup and one online-backup.     
+{: .challenge }
+
 {% include links.md %}

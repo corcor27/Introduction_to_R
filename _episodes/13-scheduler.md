@@ -1,36 +1,170 @@
 ---
-title: "Scheduling jobs"
-teaching: 45
-exercises: 30
+title: "Calculating in RStudio"
+teaching: 15
+exercises: 10
 questions:
-- "What is a scheduler and why are they used?"
-- "How do I launch a program to run on any one node in the cluster?"
-- "How do I capture the output of a program that is run on a node in the cluster?"
+- "How do we process mathmatical operations in RStudio?"
 objectives:
-- "Run a simple Hello World style program on the cluster."
-- "Submit a simple Hello World style script to the cluster."
-- "Use the batch system command line tools to monitor the execution of your job."
-- "Inspect the output and error files of your jobs."
+- "Become familiar with mathmatical operators and in-buiilt functions in RStudio."
+- "Become confident using the console to run mathmatical operations."
+- "Understand the order of operations."
 keypoints:
-- "The scheduler handles how compute resources are shared between users."
-- "Everything you do should be run through the scheduler."
-- "A job is just a shell script."
-- "If in doubt, request more resources than you will need."
+- "***PEDMAS***"
+- "Use in-built functions, you don't need to reinvent the wheel."
 ---
 
-## Job scheduler
-An HPC system might have thousands of nodes and thousands of users. How do we decide who gets what
-and when? How do we ensure that a task is run with the resources it needs? This job is handled by a
-special piece of software called the scheduler. On an HPC system, the scheduler manages which jobs
-run where and when.
+### Dipping our toes
+We have covered some relatively dry theory so let’s take some small steps and start interacting with R. From the console we can start exploring calculation. Write in the following commands.
 
-The following illustration compares these tasks of a job scheduler to a waiter in a restaurant.
-If you can relate to an instance where you had to wait for a while in a queue to get in to a 
-popular restaurant, then you may now understand why sometimes your job do not start instantly
-as in your laptop.
+```
+10 – 5 #(subtraction) 
+```
+{: .input}
 
-{% include figure.html max-width="75%" file="/fig/restaurant_queue_manager.svg"
-alt="Compare a job scheduler to a waiter in a restaurant" caption="" %}
+```
+5
+```
+{: .output}
+
+
+
+```
+10 + 5 #(addition) 
+```
+{: .input}
+
+```
+15
+```
+{: .output}
+
+
+
+```
+10 * 5 #(multiplication) 
+```
+{: .input}
+```
+50
+```
+{: .output}
+
+
+
+```
+10 / 5 #(division) 
+```
+{: .input}
+
+```
+2
+```
+{: .output}
+
+
+
+```
+5 ^ 2 #(exponentiation) 
+```
+{: .input}
+```
+25
+```
+{: .output}
+
+
+
+```
+10 %% 3 #(modulus)  
+```
+{: .input}
+```
+1
+```
+{: .output}
+
+
+### Order of operations
+
+> ## Question: Before you enter the next calculation, take a second and consider what answer would you be expecting?
+```
+5 + 10 / 3 
+```
+{: .input}
+{: .challenge }
+
+
+```
+8.333333
+```
+{: .output}
+
+
+If the answer was not what you were expecting you will need to become clear on order of operations in R. 
+
+ 
+### Remember **PE(DM)(AS)** 
+
+* **P**arentheses 
+
+* **E**xponentiation 
+
+* **D**ivision/**M**ultiplication\*  
+
+* **A**ddition/**S**ubtraction\*  
+
+\* Operators with same precedent are calculated left to right. 
+
+ 
+This tells you what order mathematical operations will be performed and ensures consistency during evaluation.  
+
+To make this concept clearer, try: 
+
+```
+(5 + 10) / 3 
+```
+{: .input}
+
+```
+5
+```
+{: .output}
+
+Using brackets we have manipulated the order of operations to perform the addition before the division. Be conscious of how you structure your mathematical operations to ensure the desired results but also readability of your code. 
+
+### Mathmatical Functions
+
+Base R provides you with a range of built in mathematical functions, try:
+
+```
+sqrt(9) 
+```
+{: .input}
+```
+3
+```
+{: .output}
+
+```
+abs(-5) 
+```
+{: .input}
+```
+5
+```
+{: .output}
+
+```
+round(3.4) 
+```
+{: .input}
+```
+3
+```
+{: .output}
+
+
+There are a whole range of built in functions that are available. You can check the help reference or a google search will find you a definitive list.
 
 
 > ## Job scheduling roleplay (optional)
