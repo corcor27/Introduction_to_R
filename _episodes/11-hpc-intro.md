@@ -64,7 +64,7 @@ Much of your initial learning time in R will be spent in the R interactive conso
 >* **Plots pane:**  
 >The plots pane in RStudio is used to interact with graphical output from your R code. You can visualise, explore, manage, and export data plots.
 >* **Help pane:**  
->Serves as a valuable resource for learning about R programming, exploring package functionality, troubleshooting issues, and finding answers to your questions. 
+>The help pane serves as a valuable resource for learning about R programming, exploring package functionality, troubleshooting issues, and finding answers to your questions. 
 {: .callout}
 
 >## Important to explore and practice
