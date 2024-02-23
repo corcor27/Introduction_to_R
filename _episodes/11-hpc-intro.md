@@ -4,12 +4,14 @@ teaching: 15
 exercises: 5
 questions:
 - "How is RStudio layed out?"
+- "How do we create a project and why is it important?"
 objectives:
 - "Be familair with the panes contained with RStudio"
 - "Be confident creating a new project and new script files"  
 keypoints:
 - "R and RStudio are not the same thing. RStudio is an IDE that provides you with a convinient way to manage R projects and R is the underlying language that enables RStudio."
 - "You will not learn everything about RStudio in a day, there are a huge number of tools available to you in RStudio. The more time you commit to exploring and practicing the more you will achieve."
+- "Project management is a vital part of ensuring that you are producing maintainable, sharable, and robust software."
 ---
 
 ## Starting a new project:
@@ -73,24 +75,26 @@ Much of your initial learning time in R will be spent in the R interactive conso
 
 ### Project management
 
-> ## Question: We have created a project in RStudio but why is it important to manage our work and what can go wrong if we don’t? 
-> Typical problems caused by poor project management. 
+>## Question: We have created a project in RStudio but what can go wrong if we don’t? 
+>Typical problems caused by poor project management. 
 
-1. Poor maintainability – You may remember the ad-hoc system you used for naming and organising files and folders but when you come back to a project a week, a month or a year later will you still remember? If someone is collaborating with you will it make any sense to them? 
+>1. ***Poor maintainability*** – You may remember the ad-hoc system you used for naming and organising files and folders but when youcome back to a project a week, a month or a year later will you still remember? If someone is collaborating with you will it make any sense to them? 
 
-2. Data corruption – Defensive steps (e.g., naming convention, back-ups, read only files) will protect your data. It can be very easy to accidently modify data that should be static. Losing/corrupting data can be catastrophic for projects.
+>2. ***Data corruption*** – Defensive steps (e.g., naming convention, back-ups, read only files) will protect your data. It can be very easy to accidently modify data that should be static. Losing/corrupting data can be catastrophic for projects.
 
-There is no ‘best’ way to manage a project, there are general principles that will make your project easier to manage. We will touch on many aspects of this during the course however a full account of these areas is outside of the scope of this session.
 
-1. Segment files sensibly: Create clearly labelled folders/sub-folders to group similar files. This will make finding and identifying files easier.  
+>## Question: What practices should we apply when it comes to project management?
+>There is no ‘best’ way to manage a project, there are general principles that will make your project easier to manage. We will touch on many aspects of this during the course however a full account of these areas is outside of the scope of this session.
 
-2. Read only data: Any original data should be read-only so it cannot be accidently modified.  
+>1. Segment files sensibly: Create clearly labelled folders/sub-folders to group similar files. This will make finding and identifying files easier.  
 
-3. Separate functions: Separating the project specific code from more generic code that could be reused in other projects will improve your efficiency when starting new projects.  
+>2. Read only data: Any original data should be read-only so it cannot be accidently modified.  
 
-4. Version control: Version control systems (VCS) are a tool that facilitate multiple users collaborating on the same project. They have a wide set of tools but are commonly used to manage reverting files to previous states, comparing changes, and managing versions. Git is the most widely used version control system. 
+>3. Separate functions: Separating the project specific code from more generic code that could be reused in other projects will improve your efficiency when starting new projects.  
 
-5. Backup: Ensuring your data and your project is backed up is vital. Consider a minimum of one local-backup and one online-backup.     
+>4. Version control: Version control systems (VCS) are a tool that facilitate multiple users collaborating on the same project. They have a wide set of tools but are commonly used to manage reverting files to previous states, comparing changes, and managing versions. Git is the most widely used version control system. 
+
+>5. Backup: Ensuring your data and your project is backed up is vital. Consider a minimum of one local-backup and one online-backup.     
 {: .challenge }
 
 {% include links.md %}
