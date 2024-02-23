@@ -13,13 +13,13 @@ keypoints:
 ---
 
 ## Starting a new project:
->Let us start by exploring the major features of we will use for this course in RStudio. Our first aim is to become more familiar with the interface. 
->Start by generate a new project (name it **‘my_first_r_project’**). Next, open a new script file (name it **'my_first_r_script’**).
->**Instructions**
->From the main menu select **‘File’ > ‘new project’ > ‘new directory’ > ‘new project’**. 
->You will be prompted for a directory name for your project and a file path where you want to create the project. 
->Name your project “OneZoo_Rintro" and choose the folder you previously created as your set-up worksheet.
->Open a new script using the small green plus button in the top right pane.
+>Let us start by exploring the major features of we will use for this course in RStudio. Our first aim is to become more familiar with the interface.  
+>Start by generate a new project (name it **‘my_first_r_project’**). Next, open a new script file (name it **'my_first_r_script’**).  
+>**Instructions**  
+>From the main menu select **‘File’ > ‘new project’ > ‘new directory’ > ‘new project’**.   
+>You will be prompted for a directory name for your project and a file path where you want to create the project.   
+>Name your project “OneZoo_Rintro" and choose the folder you previously created as your set-up worksheet.  
+>Open a new script using the small green plus button in the top right pane.  
 
 {% include figure.html max-width="100%" file="/fig/rstudioIDE.png" 
 alt="RStudio pane layout on first initialisation" caption="Figure 1: RStudio layout you should expect to see (OS and version dependant)" %}
