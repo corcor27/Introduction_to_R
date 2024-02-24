@@ -17,43 +17,46 @@ keypoints:
  - "R will make assumptions about data types unless you are explicit"
 ---
 
-
-# What are variables and why do we want them?
-
-### Moving on from calculation
-we don’t just want RStudio to be our calculator. We want to be able to store and manipulate data in a meaningful way. We want to perform operations on data, possibly many times. It would be useful to have a clarity and context for the data we are using; ideally descriptive names to make our data more manageable.
+### What are variables and why do we want them?
+We don’t just want RStudio to be our calculator. We want to be able to store and manipulate data in a meaningful way. We want to perform operations on data, possibly many times. It would be useful to have a clarity and context for the data we are using; ideally descriptive names to make our data more manageable.
 
 ### Data types 
 R utilises different data types to efficiently store and manipulate different kinds of data. We will look at the most common data types in R.
-
+  
 Data type | Example
 ------------ | -------------
 Numeric | 5.4
 Character | "Hello"
 Logical | TRUE/FALSE
 Factor | small, medium, large
-
->Context: R is dynamical typed; this means that you do not need to specify a data type when you declare a variable. That means you can give the variable name and the data you want to store and let R worry about how it deals with that.  
-
-We can define some variables. Into the console type:
+  
+>***Context:*** R is dynamical typed; this means that you do not need to specify a data type when you declare a variable. That means you can give the variable name and the data you want to store and let R worry about how it deals with that.  
+  
+### Defining variables
+Let's go ahead and define some variables. Into the console type:  
 
 ```
 x <- 10
 ```
-{: .input}
+{: .input}  
 
 ```
 y = 5
 ```
-{: .input}
+{: .input}  
 
 
-The variables x and y should now have populated your environment screen. We can inspect them, but they are relatively predictable. You may notice we used two different ways to define variables. The convention in R is to use ‘<-‘. In most other languages ‘=’ is the convention. They are interchangeable in R but it is best practice to use ‘<-‘.
+The variables x and y should now have populated your environment screen. We can inspect them, but they are relatively predictable. 
+
+> ### Syntax note:
+>You may notice we used two different ways to define variables. The convention in R is to use ‘<-‘. In most other languages ‘=’ is the convention. They are interchangeable in R, but it is best practice to use ‘<-‘.
+{: .callout}  ]
 
 {% include figure.html max-width="100%" file="/fig/environmentVars.png" 
 alt="RStudio environment pane showing newly declared variables" caption="Figure 1: RStudio environment pane showing newly declared variables" %}
+  
 
-Try:
+Let's add a few other variables of different variable types, Try:
 
 ```
 my_name <- "your name"
@@ -64,9 +67,9 @@ my_name <- "your name"
 likes_rstudo <- TRUE
 ```
 {: .input}
+  
 
-
-Now we have created variables we can now refer to them in the console. Type:
+Now we have created variables we can now refer to them in the console. Type:  
 
 ```
 x + 5
@@ -179,22 +182,22 @@ When you check the variable in the environment tab you should see that it is upd
 {: .callout}
 
 ```
-class()
+class(x)
 ```
 {: .input}
 
 ```
-
+"numeric"
 ```
 {: .output}
 
 ```
-typeof()
+typeof(x)
 ```
 {: .input}
 
 ```
-
+"double"
 ```
 {: .output}
 
