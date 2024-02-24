@@ -86,15 +86,15 @@ Typical problems caused by poor project management.
 ### Question: What practices should we apply when it comes to project management?
 There is no ‘best’ way to manage a project, there are general principles that will make your project easier to manage. We will touch on many aspects of this during the course however a full account of these areas is outside of the scope of this session.
 
-1. Segment files sensibly: Create clearly labelled folders/sub-folders to group similar files. This will make finding and identifying files easier.  
+1. ***Segment files sensibly:*** Create clearly labelled folders/sub-folders to group similar files. This will make finding and identifying files easier.  
 
-2. Read only data: Any original data should be read-only so it cannot be accidently modified.  
+2. ***Read only data:*** Any original data should be read-only so it cannot be accidently modified.  
 
-3. Separate functions: Separating the project specific code from more generic code that could be reused in other projects will improve your efficiency when starting new projects.  
+3. ***Separate functions:*** Separating the project specific code from more generic code that could be reused in other projects will improve your efficiency when starting new projects.  
 
-4. Version control: Version control systems (VCS) are a tool that facilitate multiple users collaborating on the same project. They have a wide set of tools but are commonly used to manage reverting files to previous states, comparing changes, and managing versions. Git is the most widely used version control system. 
+4. ***Version control:*** Version control systems (VCS) are a tool that facilitate multiple users collaborating on the same project. They have a wide set of tools but are commonly used to manage reverting files to previous states, comparing changes, and managing versions. Git is the most widely used version control system. 
 
-5. Backup: Ensuring your data and your project is backed up is vital. Consider a minimum of one local-backup and one online-backup.     
+5. ***Backup:*** Ensuring your data and your project is backed up is vital. Consider a minimum of one local-backup and one online-backup.     
 
 
 {% include links.md %}
