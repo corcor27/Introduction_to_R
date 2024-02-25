@@ -1,280 +1,316 @@
 ---
-title: "Accessing software"
+title: "Flow control"
 teaching: 30
 exercises: 15
 questions:
-- "How do we load and unload software packages?"
+- "How do we get our code to react dynamically?"
+- "How do we delegate repetative task and decisions?"
+- "How do we make our software robust to a wider set of use cases?"
 objectives:
-- "Understand how to load and use a software package."
+- "Understand the role of flow control in controling the order statements are executed in a program."
+- "Understand the role of logical and comparison operators and how they can be combined"
 keypoints:
-- "Discover available software with `module avail`"
-- "Load software with `module load softwareName`"
-- "Unload software with `module purge`"
-- "The module system handles software versioning and package conflicts for you automatically."
+- "Flow control is an important technique you need to learn to create useful software"
+- "Whenever possible simplicity is the best answer"
+- "Plan & refactor"
 ---
 
-On a high-performance computing system, it is often the case that no software is loaded by default. If we want to use a
-software package, we will need to "load" it ourselves.
-
-Before we start using individual software packages, however, we should understand the reasoning
-behind this approach. The three biggest factors are:
-
-- software incompatibilities;
-- versioning;
-- dependencies.
-
-Software incompatibility is a major headache for programmers. Sometimes the presence (or absence) of
-a software package will break others that depend on it. Two of the most famous examples are Python 2
-and 3 and C compiler versions. Python 3 famously provides a `python` command that conflicts with
-that provided by Python 2. Software compiled against a newer version of the C libraries and then
-used when they are not present will result in a nasty `'GLIBCXX_3.4.20' not found` error, for
-instance.
-
-Software versioning is another common issue. A team might depend on a certain package version for
-their research project - if the software version was to change (for instance, if a package was
-updated), it might affect their results. Having access to multiple software versions allow a set of
-researchers to prevent software versioning issues from affecting their results.
-
-Dependencies are where a particular software package (or even a particular version)
-depends on having access to another software package (or even a particular version of
-another software package). For example, the VASP materials science software may 
-depend on having a particular version of the FFTW (Fastest Fourer Transform in the West)
-software library available for it to work.
-
-## Environment modules
-
-Environment modules are the solution to these problems.
-A *module* is a self-contained description of a software package - 
-it contains the settings required to run a software package 
-and, usually, encodes required dependencies on other software packages.
-
-There are a number of different environment module implementations commonly
-used on HPC systems: the two most common are *TCL modules* and *Lmod*. Both of
-these use similar syntax and the concepts are the same so learning to use one will
-allow you to use whichever is installed on the system you are using. In both 
-implementations the `module` command is used to interact with environment modules. An
-additional subcommand is usually added to the command to specify what you want to do. For a list
-of subcommands you can use `module -h` or `module help`. As for all commands, you can 
-access the full help on the *man* pages with `man module`.
-
-On login you may start out with a default set of modules loaded or you may start out
-with an empty environment, this depends on the setup of the system you are using.
-
-### Listing currently loaded modules
-
-You can use the `module list` command to see which modules you currently have loaded
-in your environment. If you have no modules loaded, you will see a message telling you
-so, the ```null``` module is a special module that is automatically loaded as a placeholder if automatic loading is
-performed.
+Often, we want to perform different operations in our code based upon dynamic conditions. To explore this idea, we are going to pretend we have two sensors. The first reading a temperature, and the second reading rainfall. Our temperature is a numeric value, and our rainfall is a logical (Boolean). To declare those variables, type:
 
 ```
-{{ site.host_prompt }} module list
-```
-{: .bash}
-```
-Currently Loaded Modulefiles:
-  1) null
-```
-{: .output}
+temp_reading <- 16 
 
-### Listing available modules
+rainfall <- TRUE 
+```
+{:.input}
 
-To see available software modules, use `module avail`
+Then place the following code into your ***script pane***: 
 
 ```
-{{ site.host_prompt }} module avail
+if (rainfall == TRUE){ 
+
+  print("advise user to take umbrella") 
+
+} 
 ```
-{: .bash}
-```
-{% include /snippets/15/module_avail.snip %}
-```
-{: .output}
+{:.input}
 
-There is also the possibility of loading inherited modules from old systems such as Raven and HPC Wales but this is not
-recommended and was only used to aide migration to Hawk.  Loading either ```raven``` and ```hpcw``` modules will
-change the available modules.
+{% include figure.html max-width="100%" file="/fig/ifflow1.png" 
+alt="Flow diagrame for if condition" caption="Figure 1: Flow diagrame for an if condition" %}
 
-## Loading and unloading software
-
-To load a software module, use `module load`.
-In this example we will use Python 3.
-
-Initially, Python 3 is not loaded. 
-We can test this by using the `which` command.
-`which` looks for programs the same way that Bash does,
-so we can use it to tell us where a particular piece of software is stored.
+Run the script using the ‘run’ button on the top right of the pane (pay attention to where your cursor is in the script pane when you run the script). 
 
 ```
-{{ site.host_prompt }} which python3
+  "advise user to take umbrella"
 ```
-{: .bash}
-```
-{% include /snippets/15/which_missing.snip %}
-```
-{: .output}
+{:.output}
 
-We can load the `python3` command with `module load`:
+From observing the output in the console and from a brief inspection of the code, it should be evident that we are evaluating the variable rainfall. Specifically, we are checking for equivalence (==). If the outcome is of the check is valid then we perform any code within the brackets.
 
-```
-{% include /snippets/15/load_python.snip %}
-```
-{: .bash}
-```
-{% include /snippets/15/which_python.snip %}
-```
-{: .output}
 
-So, what just happened?
-
-To understand the output, first we need to understand the nature of the `$PATH` environment
-variable. `$PATH` is a special environment variable that controls where a UNIX system looks for
-software. Specifically `$PATH` is a list of directories (separated by `:`) that the OS searches
-through for a command before giving up and telling us it can't find it. As with all environment
-variables we can print it out using `echo`.
+Now modify your code to look like this:
 
 ```
-{{ site.host_prompt }} echo $PATH
-```
-{: .bash}
-```
-{% include /snippets/15/path.snip %}
-```
-{: .output}
+if (rainfall){ # Note with logical variables we don't have to check for equivalence (if logical_variable or if TRUE/FALSE).
 
-You'll notice a similarity to the output of the `which` command. In this case, there's only one
-difference: the different directory at the beginning. When we ran the `module load` command,
-it added a directory to the beginning of our `$PATH`. Let's examine what's there:
+  print("advise user to take umbrella") 
 
+}else{ 
+
+  print("leave your umbrella at home") 
+
+} 
 ```
-{% include /snippets/15/ls_dir.snip %}
-```
-{: .bash}
-```
-{% include /snippets/15/ls_dir_output.snip %}
-```
-{: .output}
+{:.input}
 
-Taking this to it's conclusion, `module load` will add software to your `$PATH`. It "loads"
-software. A special note on this - depending on which version of the `module` program that is
-installed at your site, `module load` will also load required software dependencies.
+{% include figure.html max-width="100%" file="/fig/ifflow2.png" 
+alt="Flow diagrame for if condition" caption="Figure 2: Flow diagrame for an if, else condition" %}
 
-{% include /snippets/15/depend_demo.snip %}
-
-## Software versioning
-
-So far, we've learned how to load and unload software packages. This is very useful. However, we
-have not yet addressed the issue of software versioning. At some point or other, you will run into
-issues where only one particular version of some software will be suitable. Perhaps a key bugfix
-only happened in a certain version, or version X broke compatibility with a file format you use. In
-either of these example cases, it helps to be very specific about what software is loaded.
-
-Let's examine the output of `module avail` more closely.
+Now change the rainfall variable to ‘FALSE’ and run the script again.
 
 ```
-{{ site.host_prompt }} module avail
-```
-{: .bash}
-```
-{% include /snippets/15/module_avail.snip %}
-```
-{: .output}
-
-{% include /snippets/15/gcc_example.snip %}
-
-> ## Using software modules in scripts
->
-> Create a job that is able to run `python3 --version`. Remember, no software is loaded by default!
-> Running a job is just like logging on to the system (you should not assume a module loaded on the
-> login node is loaded on a compute node).  Running `module purge` as first command in the job is recommended.
-{: .challenge}
-
-> ## Loading a module by default
-> 
-> Adding a set of `module load` commands to all of your scripts and having to manually load modules
-> every time you log on can be tiresome. Fortunately, there is a way of specifying a set of 
-> "default  modules" that always get loaded, regardless of whether or not you're logged on or 
-> running a job. Every user has two hidden files in their home directory: `.bashrc` and 
-> `.bash_profile` (you can see these files with `ls -la ~`). These scripts are run every time you 
-> log on or run a job.  To aide with changes to the system, a `.myenv` file is sourced by `.bashrc`.  Adding a `module load` command to `.myenv` means that 
-> that module will always be loaded. Modify either your `.myenv` scripts to 
-> load a commonly used module like Python. Does your `python3 --version` job from before still 
-> need `module load` to run?
-{: .challenge}
-
-## Installing software of our own
-
-Most HPC clusters have a pretty large set of preinstalled software. Nonetheless, it's unlikely that
-all of the software we'll need will be available. Sooner or later, we'll need to install some
-software of our own.
-
-Though software installation differs from package to package, the general process is the same:
-download the software, read the installation instructions (important!), install dependencies,
-compile, then start using our software.
-
-As an example we will install the bioinformatics toolkit `seqtk`. We'll first need to obtain the
-source code from GitHub using `git`.
+rainfall <- FALSE
 
 ```
-{{ site.host_prompt }} git clone https://github.com/lh3/seqtk.git
-```
-{: .bash}
-```
-Cloning into 'seqtk'...
-remote: Counting objects: 316, done.
-remote: Total 316 (delta 0), reused 0 (delta 0), pack-reused 316
-Receiving objects: 100% (316/316), 141.52 KiB | 0 bytes/s, done.
-Resolving deltas: 100% (181/181), done.
-```
-{: .output}
-
-Now, using the instructions in the README.md file, all we need to do to complete the install is to
-`cd` into the seqtk folder and run the command `make`.
+{:.input}
 
 ```
-{{ site.host_prompt }} cd seqtk
-{{ site.host_prompt }} make
+  "leave your umbrella at home"
 ```
-{: .bash}
-```
-gcc -g -Wall -O2 -Wno-unused-function seqtk.c -o seqtk -lz -lm
-seqtk.c: In function ‘stk_comp’:
-seqtk.c:399:16: warning: variable ‘lc’ set but not used [-Wunused-but-set-variable]
-    int la, lb, lc, na, nb, nc, cnt[11];
-                ^
-```
-{: .output}
+{:.output}
 
-It's done! Now all we need to do to use the program is invoke it like any other program.
+Our code now reacts differently to different input values. You can combine ‘if’, ‘else if’, and ‘else’ statements to control the flow of your code.
+
+
+### Conditional statements
+* **‘if’** – used to execute a block of code if a condition is true. 
+
+* **‘else if’** – extends an ‘if’ statement to only check this condition if the previous ‘if’ or ‘else if’ condition was resolved as false.  
+
+* **‘else’** – extends an ‘if’ statement, will execute if none of the preceding ‘if’ conditions are true. 
+
+### Comparison operators
+
+We have encountered ‘==’, it is used to check for equivalence. Thare are other comparison operators available to us.
+
+* ‘**<**’ Less than 
+
+* ‘**<=**’ Less than or equal to 
+
+* ‘**>**’ Greater than 
+
+* ‘**>=**’ Greater than or equal to 
+
+* ‘**==**’ equivalent 
+
+* ‘**!=**’ not equivalent  
+
+Intuitively you might think that some of these operators are going to work only for numeric values (i.e., how can "apple" < FALSE). We could try a few tests to get a feel for how it works:
 
 ```
-{{ site.host_prompt }} ./seqtk
-```
-{: .bash}
-```
-Usage:   seqtk <command> <arguments>
-Version: 1.2-r101-dirty
+TRUE == FALSE
 
-Command: seq       common transformation of FASTA/Q
-         comp      get the nucleotide composition of FASTA/Q
-         sample    subsample sequences
-         subseq    extract subsequences from FASTA/Q
-         fqchk     fastq QC (base/quality summary)
-         mergepe   interleave two PE FASTA/Q files
-         trimfq    trim FASTQ using the Phred algorithm
-
-         hety      regional heterozygosity
-         gc        identify high- or low-GC regions
-         mutfa     point mutate FASTA at specified positions
-         mergefa   merge two FASTA/Q files
-         famask    apply a X-coded FASTA to a source FASTA
-         dropse    drop unpaired from interleaved PE FASTA/Q
-         rename    rename sequence names
-         randbase  choose a random base from hets
-         cutN      cut sequence at long N
-         listhet   extract the position of each het
 ```
-{: .output}
+{:.input}
 
-We've successfully installed our first piece of software!
+```
+FALSE
+```
+{:.output} 
+
+What we would expect.
+
+```
+TRUE == TRUE
+
+```
+{:.input}
+
+```
+TRUE
+```
+{:.output} 
+
+Still what we would expect.
+
+```
+"four" < "five"
+
+```
+{:.input}
+
+```
+FALSE
+```
+{:.output} 
+
+We are clearly not comparing on the meaning of characters.
+```
+"five" < "six"
+
+```
+{:.input}
+
+```
+TRUE
+```
+{:.output} 
+
+We are comparing alphabetically.
+
+```
+"apple" < FALSE
+
+```
+{:.input}
+
+```
+TRUE
+```
+{:.output} 
+
+What is happening here? Why is "apple" less than FALSE?
+
+R is trying to interpret what you are asking for as such it is coercing data types. Coercion follows a hierarchy where items can be converted from lower to higher but not higher to lower.  
+
+* Lowest
+* Logical: Logical values (TRUE or FALSE) are lowest in hierarchy. 
+* Integer values. (True becomes 1, False becomes 0)
+* Floating-point values. (5 becomes 5.0) 
+* Character. The highest in hierarchy (TRUE becomes ‘TRUE’, 5.0 becomes “5.0”) 
+* Highest
+
+We are comparing "apple" < "FALSE" alphabetically. Try:
+
+```
+"zoo" < FALSE
+
+```
+{:.input}
+
+```
+FALSE
+```
+{:.output} 
+
+Now the word is alphabetically greater than "FALSE" we should return FALSE.
+
+>## Question
+> ***Why do we care about "apple" < FALSE ?*** 
+>We are never going to want to compare “apple” to FALSE, that is not the issue. The issue is that if you have made a mistake and you are comparing the wrong variables you may not get an error. You will just be getting unexpected behaviour from your software which can be very difficult to catch. We will look more at coercion and data types when we deal with manipulating data sets. 
+{: .callout}
+
+Declare a new variable:
+
+```
+storm <- TRUE 
+
+```
+{:.input}
+
+Replace the code in your script with this: 
+
+ 
+```
+if (storm == TRUE){ 
+
+  print("stay at home") 
+
+}else if (temp_reading < 10){ 
+
+  print("take a coat") 
+
+  if (rainfall){ 
+
+    print("and take an umbrella") 
+
+  }else{ 
+
+    print("and leave your umbrella at home") 
+
+  } 
+
+}else{ 
+
+  print("leave your coat") 
+
+  if (rainfall){ 
+
+    print("and take an umbrella") 
+
+  }else{ 
+
+    print("and leave your umbrella at home") 
+
+  } 
+
+} 
+```
+{:.input}
+
+{% include figure.html max-width="100%" file="/fig/ifflow2.png" 
+alt="Flow diagrame for if condition" caption="Figure 3: Flow diagrame for an if, else if, else condition" %}
+
+We now have our old conditional statements inside a new conditional statement. This is referred to as ‘nested’. If your code becomes overly nested it can impact its readability and maintainability. It is good practice to keep your workflow as simple as possible, this can be made easier by well though through design and regular refactoring.
+
+Note: Refactoring is the process of restructuring code, not to change the functionality but to improve factors like readability, maintainability, efficiency. 
+
+Now you have three variables storm, temp_reading and rainfall. You can modify the values and see how this changes the order statements are executed in a program.
+
+>## Question
+> ***What do you think some of the problems with this example might be?*** 
+>There a several concerns that you may have. The ones I want to draw your attention to are
+1. No defensive programming – What happens if we ‘accidently’ switch temp_reading and storm variables?
+2. Hardcoded variables – Should a user preference be hardcoded? 
+3. Redundancy - repetition of code if we want to make a change, we must change both places.
+{: .callout}
+
+We will look at these issue in more detail and consider ways to fix them as we go through more examples.
+
+### Logical operators
+
+Logical operators can be used to combine multiple comparison operators (e.g., if x < y and if x > z).
+
+The most common are   
+
+* AND ‘&&’ 
+
+* OR ‘||’ 
+
+* NOT ‘!’ (negation)  
+
+Let's try an example, add a new variable and add this new code to your script: 
+
+```
+day = "sunday"
+```
+{: input}
+
+ 
+```
+if (storm == TRUE && (day == "saturday" || day == "sunday")){ #even if it's stormy I still have to work mon-fri
+    print("stay at home") 
+}else{
+    print("go to work")
+}
+```
+{: input}
 
 {% include links.md %}
+
+This may look more complicated, but we are stringing the conditionals we already considered with logical operators (i.e., IF storm is true AND the day is (Saturday OR Sunday)).
+
+>## Question
+> ***What do you think the consequence of removing the brackets will be?*** 
+>Hint: Change storm <- FALSE, day <- "sunday". What happens? What should happen?
+{: .callout}  
+
+You need to ensure that you are explicit with the conditional operations by using brackets.
+
+We have covered a brief introduction to the basic building blocks of flow control. Hopefully you have grasped with the few tools we have considered you can develop sophisticated flow control. There are more tools to consider to be fully competent on all aspects of flow control. However, they fall outside of the scope of this course.    
+
+We have included a source to provide a starting point for you to explore advanced flow control if you wish to (e.g., switch statements, loops etc.): 
+
+[Starting point for advanced flow control](https://adv-r.hadley.nz/control-flow.html )
+
+Note: If you have coding experience you may have used loops many times. In R loops can be problematic due to performance issue with memory allocation on large datasets. It is not a beginner-friendly topic, this in part is why we have excluded them from this introduction to workflow.   
