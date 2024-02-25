@@ -67,7 +67,7 @@ dput(yourvariable)
 
 SessionInfo will print out your version of R and packages that are currently loaded. 
 ```
-?sessionInfo() 
+sessionInfo() 
 ```
 {: .input}
 

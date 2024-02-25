@@ -11,7 +11,7 @@ objectives:
  - "Confident assigning variables"
  - "Understand different data types"
 keypoints:
- - "Variable naming is important be consistent and succinct"
+ - "When naming variables it's important be consistent and succinct"
  - "Output assignment has to be explicit to keep the result of an operation"
  - "Different data types can require different operations"
  - "R will make assumptions about data types unless you are explicit"
@@ -30,7 +30,7 @@ Character | "Hello"
 Logical | TRUE/FALSE
 Factor | small, medium, large
   
->***Context:*** R is dynamical typed; this means that you do not need to specify a data type when you declare a variable. That means you can give the variable name and the data you want to store and let R worry about how it deals with that.  
+>***Context:*** R is dynamical typed; this means that you do not need to specify a data type when you declare a variable. You can give the variable name and the data you want to store and let R worry about how it deals with that.  
   
 ### Defining variables
 Let's go ahead and define some variables. Into the console type:  
@@ -48,14 +48,17 @@ y = 5
 
 The variables x and y should now have populated your environment screen. We can inspect them, but they are relatively predictable. 
 
-> ### Syntax note:
->You may notice we used two different ways to define variables. The convention in R is to use ‘<-‘. In most other languages ‘=’ is the convention. They are interchangeable in R, but it is best practice to use ‘<-‘.
-{: .callout}  ]
+>## Syntax note
+> ***Multiple ways to assign***  
+>You may notice we used two different ways to define variables. The convention in R is to use ‘<-‘. In most other languages ‘=’ is the convention. They are interchangeable in R, but it is best practice to use ‘<-‘. From now on we will only use '<-' but be aware you might see '=' asignment in other sources. 
+{: .callout}
 
 {% include figure.html max-width="100%" file="/fig/environmentVars.png" 
-alt="RStudio environment pane showing newly declared variables" caption="Figure 1: RStudio environment pane showing newly declared variables" %}
-  
+alt="RStudio environment pane showing newly declared variables" caption="Figure 1: RStudio environment pane showing newly declared variables" %}  
 
+
+
+### Delcare more variables:
 Let's add a few other variables of different variable types, Try:
 
 ```
@@ -64,7 +67,7 @@ my_name <- "your name"
 {: .input}
 
 ```
-likes_rstudo <- TRUE
+likes_rstudio <- TRUE
 ```
 {: .input}
   
@@ -83,7 +86,7 @@ x + 5
 
 
 > ## What does the environment say about variable x?
-> You should notice that the variable has not changed it's value to 15.
+> You should notice that the variable 'x' has not changed it's value to 15.
 {: .challenge}
 
 Now try:
@@ -108,7 +111,7 @@ Variable naming is important but often overlooked by new programmers (and experi
 * There are reserved words (e.g., ‘else’, ‘for’) that cannot be used for naming variables as they are already used by R for specific purposes.  
 
  
-It may seem fussy but in the grand scheme there are not that many enforce restrictions compared to the possible combinations of what you can name a variable. However, just because you can doesn’t mean you should. There exist several naming conventions in the R community to help provide structure to variable naming. 
+It may seem fussy but there are actually not that many enforced restrictions compared to the number of variable naming combinations. However, just because you can, doesn’t mean you should. There exist several naming conventions in the R community to help provide structure and guidance to variable naming. 
 
  
 
@@ -124,13 +127,13 @@ Although some may disagree with us, we believe for most users it does not matter
 
  
 
-1. Consistency – pick a convention and stick with it. 
+1. ***Consistency*** – pick a convention and stick with it. 
 
-2. Succinctness - Keep variable names short, readable, and descriptive. 
+2. ***Succinctness*** - Keep variable names short, readable, and descriptive. 
 
  
 
-For example, if you wanted a variable name for a temperature reading taken at Aberystwyth: 
+For ***example***, if you wanted a variable name for a temperature reading taken in Aberystwyth: 
 
 
 This: 
@@ -148,11 +151,11 @@ Or this:
 >themininimumtemperaturerecordedfromaberystwythindegreescelcius 
 
  
-Being consistent, aware of context, and conscious of your variable naming will make reading your code easier and decrease the risk of mistakes.   
+Being consistent, aware of context, and conscious of your variable naming will make reading your code easier and decrease the risk of errors.   
 
 ### Working with variables
 
-Try:
+We have added numeric values together so now lets try combining Try:
 
 ```
 my_name <- my_name + "your surname"
@@ -165,9 +168,9 @@ Error in my_name + "your surname" :
 ```
 {: .output}
 
-What this error is telling you is that you tried to use a binary operator (+) on a non-numeric argument (my_name + "your surname"). 
+This error is telling us that we tried to use a binary operator (+) on a non-numeric argument (my_name + "your surname"). 
 
-We know that we are dealing with characters and in R '+' is an operator that runs on numeric variables. In the case of characters we need to use the method paste(). Try:
+We know that we are dealing with characters, in R the '+' is an operator that runs on numeric variables only. For characters we need to use the method paste(). Try:
 
 ```
 my_name <- paste(my_name, "your surname") 
