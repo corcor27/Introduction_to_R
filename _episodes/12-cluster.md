@@ -16,18 +16,20 @@ keypoints:
 
 It is inevitable, at some point you will need help. For most people it is impossible to remember every facet of the R language. As such, you will often need to familiarise yourself with the functionality of some aspect of the R language. The help panel built into RStudio is an excellent starting resource.  
 
-Head to the console we will request some help about a function we used in the pre-worksheet. Type:
+Head to the console, we will request some help about a function we used in the pre-worksheet. Type:
 
 ```
 ? getwd()
 ```
-{: .input}
+{: .input}   
+
+>***Note:*** You may have notice that RStudio is attempting to autocomplete your commands.
+> This can be very useful and efficient but can also lead to you running the wrong commands if you are not paying attention.  
 
 {% include figure.html max-width="100%" file="/fig/helpwithfunctions.png" 
 alt="Help pane showing getwd() function" caption="Figure 1: Your help pane should now contain this information" %}
   
->***Note:*** You may have notice that RStudio is attempting to autocomplete your commands.  
-> This can be very useful and efficient but can also lead to you running the wrong commands if you are not paying attention.  
+### Help output
 
 Each help page is broken down into these sections:  
 * **Description:** An extended description of what the function does.

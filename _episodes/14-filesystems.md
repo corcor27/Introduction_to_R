@@ -25,7 +25,7 @@ R utilises different data types to efficiently store and manipulate different ki
   
 Data type | Example
 ------------ | -------------
-Numeric | 5.4
+Numeric | integers (0, 5, 102) & doubles (0.75, 5.17, 102.6)
 Character | "Hello"
 Logical | TRUE/FALSE
 Factor | small, medium, large
@@ -155,7 +155,7 @@ Being consistent, aware of context, and conscious of your variable naming will m
 
 ### Working with variables
 
-We have added numeric values together so now lets try combining Try:
+We have added numeric values together so now lets try combining characters. Try:
 
 ```
 my_name <- my_name + "your surname"
@@ -170,7 +170,7 @@ Error in my_name + "your surname" :
 
 This error is telling us that we tried to use a binary operator (+) on a non-numeric argument (my_name + "your surname"). 
 
-We know that we are dealing with characters, in R the '+' is an operator that runs on numeric variables only. For characters we need to use the method paste(). Try:
+We know that we are dealing with characters, in R the '+' is an operator that does not work with characters. For characters we need to use the method paste(). Try:
 
 ```
 my_name <- paste(my_name, "your surname") 
@@ -203,6 +203,41 @@ typeof(x)
 "double"
 ```
 {: .output}
+
+We find that x is a double. Even though the value 5 is an integer, R stores it as a double to allow for flexibility in calculations. If we run the following lines:
+
+```
+a <- 5L
+```
+{: .input}
+We can let R know at decleration that we want the value as an integer.
+
+```
+x <- as.integer(x)
+```
+{: .input}
+We can cast the value to an integer using the R inbuilt function.
+
+In the environment tab you should see that both variables now show as '5L'. If we try again:
+
+```
+class(x)
+```
+{: .input}
+
+```
+"numeric"
+```
+{: .output}
+
+```
+typeof(x)
+```
+{: .input}
+
+```
+"integer"
+```
 
 ### Summary
 
