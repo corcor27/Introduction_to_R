@@ -3,23 +3,19 @@ layout: lesson
 root: .
 ---
 
-This workshop is an introduction to using high-performance computing systems effectively. We
-obviously can't cover every case or give an exhaustive course on parallel programming in just two
-days' of teaching time. Instead, this workshop is intended to give students a good introduction and
-overview of the tools available and how to use them effectively.
+This is a condensed introduction to R and RStudio. We have aimed to provide you with the basic information you need to tackle statistics and machine learning. It is a big task to learn a programming language especially if you have no experience. You will not be fluent in R by the end of this session, but hopefully you will be off to a good start.
 
 By the end of this workshop, students will know how to:
 
-* Use the UNIX command line to operate a computer, connect to a cluster, and write simple shell
-  scripts.
-* Submit and manage jobs on a cluster using a scheduler, transfer files, and use software through
-  environment modules.
-
-
+* Navigate RStudio, install packages, and manage projects.
+* Handle variables and data structures (vectors, lists, and data frames).
+* Impliment flow control.
+* Create functions.
+* Plot graphics.
 
 > ## Prerequisites
 >
-> Command line experience is necessary for this lesson. We recommend the participants to go through
-> [shell-novice](https://swcarpentry.github.io/shell-novice/) if new to the terminal.
+> Participants need to have complete pre-worksheet to ensure all the software and packages needed for this course are installed.
+> Participants understanding file management on their operating system.
 {: .prereq}
 
