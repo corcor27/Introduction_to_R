@@ -10,7 +10,7 @@ objectives:
 keypoints:
 - "Vectors can only hold a single data type"
 - "Vectorisation allows us to apply operations to all the variables in a vector"
-- "Vectors can be indexed by multiple methods to retrieve the specific information you require"
+- "Vectors can be indexed by multiple methods to retrieve/manipulate the specific information you desire"
 ---
 
 ### What happens when we have to deal with increasing data sizes?

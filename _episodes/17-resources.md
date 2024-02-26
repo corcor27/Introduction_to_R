@@ -1,184 +1,97 @@
 ---
-title: "Using resources effectively"
+title: "Functions"
 teaching: 15
 exercises: 10
 questions:
-- "How do we monitor our jobs?"
-- "How can I get my jobs scheduled more easily?" 
+- "How do I make my own function?"
+- "Why would I want to make my own function?" 
 objectives:
-- "Understand how to look up job statistics and profile code."
-- "Understand job size implications."
+- "Understand function structure"
+- "Know how touse the 'apply' family of functions"
 keypoints:
-- "The smaller your job, the faster it will schedule."
+- "Functions can help reduce redundancy and increase reusability in your code"
 ---
 
-We now know virtually everything we need to know about getting stuff on a cluster. We can log on,
-submit different types of jobs, use preinstalled software, and install and use software of our own.
-What we need to do now is use the systems effectively.
+### Exploring functions
 
-## Estimating required resources using the scheduler
+So far, we have been using in-built functions. For exmaple you type ‘sqrt()’ place your value (argument/parameters) into the function, some magic happens, and it returns an output. We will now start to the structure of functions and how we can create our own.  
 
-Although we covered requesting resources from the scheduler earlier, how do we know how much and
-what type of resources we will need in the first place?
+### Function structure 
 
-Answer: we don't. Not until we've tried it ourselves at least once. We'll need to benchmark our job
-and experiment with it before we know how much it needs in the way of resources.
+> my_function <- function(parameters) {     
+> perform action
+> return value
+> }
 
-The most effective way of figuring out how much resources a job needs is to submit a test job, and
-then ask the scheduler how many resources it used.
+### Function example
 
-A good rule of thumb is to ask the scheduler for more time and memory than you expect your job to
-need. This ensures that minor fluctuations in run time or memory use will not result in your job
-being canceled by the scheduler. Recommendations for how much extra to ask for vary but 10% is 
-probably the minimum, with 20-30% being more typical. Keep in mind that if you ask for too much,
-your job may not run even though enough resources are available, because the scheduler will be
-waiting to match what you asked for.
-
-{% include /snippets/17/bench.snip %}
-
-Once the job completes (note that it takes much less time than expected), we can query the 
-scheduler to see how long our job took and what resources were used. We will use `{{ site.sched_hist }}` to
-get statistics about our job.
+We can convert our previous calculation into a function. Open a new script file and type this in: 
 
 ```
-{{ site.host_prompt }} {{ site.sched_hist }}
+celc_to_fahr<- function(celc) { #function name and the arguments we are passing in 
+  fahr <- celc* 9/5 + 32 #the actions we are acting on our arguments 
+  return(fahr) #what we are returning 
+} 
 ```
-{: .bash}
-```
-{% include /snippets/17/stat_output.snip %}
-```
-{: .output}
+{: .language-r}
 
-This shows all the jobs we ran recently (note that there are multiple entries per job). To get
-detailed info about a job, we change command slightly.
+Save this script as 'my_functions' and run the lines from the script pane.
 
-```
-{{ site.host_prompt }} {{ site.sched_hist }} {{ site.sched_flag_histdetail }} 1965
-```
-{: .bash}
-
-It will show a lot of info, in fact, every single piece of info collected on your job by the
-scheduler. It may be useful to redirect this information to `less` to make it easier to view (use
-the left and right arrow keys to scroll through fields).
+Now we can convert Celsius to Fahrenheit in the console by typing:
 
 ```
-{{ site.host_prompt }} {{ site.sched_hist }} {{ site.sched_flag_histdetail }} 1965| less
+celc_to_fahr(14) 
 ```
-{: .bash}
-
-Some interesting fields include the following:
-
-* **Hostname** - Where did your job run?
-* **MaxRSS** - What was the maximum amount of memory used?
-* **Elapsed** - How long did the job take?
-* **State** - What is the job currently doing/what happened to it?
-* **MaxDiskRead** - Amount of data read from disk.
-* **MaxDiskWrite** - Amount of data written to disk.
-
-## Measuring the statistics of currently running tasks
-
-> ## Connecting to Nodes
-> Typically, clusters allow users to connect directly to compute nodes from the login 
-> node. This is useful to check on a running job and see how it's doing, but is not
-> a recommended practice in general, because it bypasses the resource manager.
-> If you need to do this, check where a job is running with `{{ site.sched_status }}`, then
-> run `ssh nodename`. (Note, this may not work on all clusters.)
-{: .callout}
-  
-We can also check on stuff running on the login node right now the same way (so it's 
-not necessary to `ssh` to a node for this example).
-
-### top
-
-The best way to check current system stats is with `top` (`htop` is a prettier version of `top` but
-may not be available on your system).
-
-Some sample output might look like the following (`Ctrl + c` to exit):
+{: .language-r}
 
 ```
-{{ site.host_prompt }} top
-```
-{: .bash}
-```
-{% include /snippets/17/top_output.snip %}
+57.2
 ```
 {: .output}
 
-Overview of the most important fields:
-
-* `PID` - What is the numerical id of each process?
-* `USER` - Who started the process?
-* `RES` - What is the amount of memory currently being used by a process (in bytes)?
-* `%CPU` - How much of a CPU is each process using? Values higher than 100 percent indicate that a
-  process is running in parallel.
-* `%MEM` - What percent of system memory is a process using?
-* `TIME+` - How much CPU time has a process used so far? Processes using 2 CPUs accumulate time at
-  twice the normal rate.
-* `COMMAND` - What command was used to launch a process?
-
-### free
-
-Another useful tool is the `free -h` command. This will show the currently used/free amount of
-memory.
+Go back to to the script my_first_script. At the top of the script place this line:
 
 ```
-{{ site.host_prompt }} free -h
+source("my_functions.R") 
 ```
-{: .bash}
+{: .language-r}
+
+We can now run this function from this my_first_script.
+
 ```
-{% include /snippets/17/free_output.snip %}
+celc_to_fahr(14) 
+```
+{: .language-r}
+
+```
+57.2
 ```
 {: .output}
 
-The key fields here are total, used, and available - which represent the amount of memory that the
-machine has in total, how much is currently being used, and how much is still available. When a
-computer runs out of memory it will attempt to use "swap" space on your hard drive instead. Swap
-space is very slow to access - a computer may appear to "freeze" if it runs out of memory and 
-begins using swap. However, compute nodes on HPC systems usually have swap space disabled so when
-they run out of memory you usually get an "Out Of Memory (OOM)" error instead.
+If you have generalised functions that you use often in different scripts. It is good practice to store them in a script file. You can then into any project where you need them. This reduces rewriting and editing code, and reduces the chance of you introducting errors (e.g., typos, caluclation errors, etc.).
 
-### ps 
-
-To show all processes from your current session, type `ps`.
+If we want to run this method on multiple variables, we can use the sapply() method. This method takes data and a function. It then applies the function to every variable from the data you provided. 
 
 ```
-{{ site.host_prompt }} ps
+fahrenheit_temps <- sapply(temperatures,  celc_to_fahr) 
 ```
-{: .bash}
-```
-  PID TTY          TIME CMD
-15113 pts/5    00:00:00 bash
-15218 pts/5    00:00:00 ps
-```
-{: .output}
+{: .language.R}
 
-Note that this will only show processes from our current session. To show all processes you own
-(regardless of whether they are part of your current session or not), you can use `ps ux`.
+For more information on the common apply family functions, you can check: 
 
 ```
-{{ site.host_prompt }} ps ux
+?sapply()  
+
+?lapply() 
+
+?apply() 
 ```
-{: .bash}
-```
-USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
-auser  67780  0.0  0.0 149140  1724 pts/81   R+   13:51   0:00 ps ux
-auser  73083  0.0  0.0 142392  2136 ?        S    12:50   0:00 sshd: auser@pts/81
-auser  73087  0.0  0.0 114636  3312 pts/81   Ss   12:50   0:00 -bash
-```
-{: .output}
+{: .language.R}
 
-This is useful for identifying which processes are doing what.
+> ### But wait! 
+>You might be confused and thinking; the output ‘fahrenheit_temps’ looks like an identical output to “temperatures <- temperatures * 9/5 + 32” that we processed earlier. Very well spotted, we have used a slightly redundant but very simple example to highlight the process. In the future you may want to create much more complicated functions that you want to apply to large datasets, this was just a toy example to show you how. 
+{: .challenge}
 
-## Killing processes
 
-To kill all of a certain type of process, you can run `killall commandName`. `killall rsession`
-would kill all `rsession` processes created by RStudio, for instance. Note that you can only kill
-your own processes.
-
-You can also kill processes by their PIDs using `kill 1234` where `1234` is a `PID`. Sometimes
-however, killing a process does not work instantly. To kill the process in the most hardcore manner
-possible, use the `-9` flag. It's recommended to kill using without `-9` first. This gives a 
-process the chance to clean up child processes, and exit cleanly. However, if a process just isn't
-responding, use `-9` to kill it instantly.
 
 {% include links.md %}
