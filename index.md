@@ -15,7 +15,7 @@ By the end of this workshop, students will know how to:
 
 > ## Prerequisites
 >
-> Participants need to have complete pre-worksheet to ensure all the software and packages needed for this course are installed.
-> Participants understanding file management on their operating system.
+> * Participants need to have complete pre-worksheet to ensure all the software and packages needed for this course are installed.
+> * Participants understanding file management on their operating system.
 {: .prereq}
 
