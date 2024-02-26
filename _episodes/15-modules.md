@@ -36,8 +36,10 @@ if (rainfall == TRUE){
 {:.input}
 
 {% include figure.html max-width="100%" file="/fig/ifflow1.png" 
-alt="Flow diagrame for if condition" caption="Figure 1: Flow diagrame for an if condition" %}
+alt="Flow diagrame for if condition" caption="Figure 1: Flow diagram for an *if* condition" %}
 
+
+### Evaluating the order of operations
 Run the script using the ‘run’ button on the top right of the pane (pay attention to where your cursor is in the script pane when you run the script). 
 
 ```
@@ -45,13 +47,13 @@ Run the script using the ‘run’ button on the top right of the pane (pay atte
 ```
 {:.output}
 
-From observing the output in the console and from a brief inspection of the code, it should be evident that we are evaluating the variable rainfall. Specifically, we are checking for equivalence (==). If the outcome is of the check is valid then we perform any code within the brackets.
+From observing the output in the console and from a brief inspection of the code, it should be evident that we are evaluating the variable rainfall. Specifically, we are checking for equivalence (**==**). If the outcome is of the check is valid then we perform any code within the brackets.
 
 
 Now modify your code to look like this:
 
 ```
-if (rainfall){ # Note with logical variables we don't have to check for equivalence (if logical_variable or if TRUE/FALSE).
+if (rainfall){ 
 
   print("advise user to take umbrella") 
 
@@ -61,11 +63,14 @@ if (rainfall){ # Note with logical variables we don't have to check for equivale
 
 } 
 ```
+Note: with logical variables, we don't have to check for equivalence (if (logical_variable) is if (TRUE/FALSE)).
+
 {:.input}
 
 {% include figure.html max-width="100%" file="/fig/ifflow2.png" 
-alt="Flow diagrame for if condition" caption="Figure 2: Flow diagrame for an if, else condition" %}
+alt="Flow diagrame for if condition" caption="Figure 2: Flow diagram for an if, else condition" %}
 
+### Change the order
 Now change the rainfall variable to ‘FALSE’ and run the script again.
 
 ```
@@ -118,7 +123,7 @@ FALSE
 ```
 {:.output} 
 
-What we would expect.
+As we would expect.
 
 ```
 TRUE == TRUE
@@ -131,7 +136,7 @@ TRUE
 ```
 {:.output} 
 
-Still what we would expect.
+As we would expect.
 
 ```
 "four" < "five"
@@ -144,7 +149,7 @@ FALSE
 ```
 {:.output} 
 
-We are clearly not comparing on the meaning of characters.
+R is clearly not comparing on the meaning of characters.
 ```
 "five" < "six"
 
@@ -249,8 +254,9 @@ if (storm == TRUE){
 {:.input}
 
 {% include figure.html max-width="100%" file="/fig/ifflow2.png" 
-alt="Flow diagrame for if condition" caption="Figure 3: Flow diagrame for an if, else if, else condition" %}
+alt="Flow diagrame for if condition" caption="Figure 3: Flow diagram for an if, else if, else condition" %}
 
+### Keeping things clear
 We now have our old conditional statements inside a new conditional statement. This is referred to as ‘nested’. If your code becomes overly nested it can impact its readability and maintainability. It is good practice to keep your workflow as simple as possible, this can be made easier by well though through design and regular refactoring.
 
 Note: Refactoring is the process of restructuring code, not to change the functionality but to improve factors like readability, maintainability, efficiency. 
@@ -258,11 +264,11 @@ Note: Refactoring is the process of restructuring code, not to change the functi
 Now you have three variables storm, temp_reading and rainfall. You can modify the values and see how this changes the order statements are executed in a program.
 
 >## Question
-> ***What do you think some of the problems with this example might be?*** 
+> ***What do you think might be probomatic about this example?***   
 >There a several concerns that you may have. The ones I want to draw your attention to are
 1. No defensive programming – What happens if we ‘accidently’ switch temp_reading and storm variables?
 2. Hardcoded variables – Should a user preference be hardcoded? 
-3. Redundancy - repetition of code if we want to make a change, we must change both places.
+3. Redundancy - When we have repetition in code it can lead to problems with updating (e.g., if we want to make a chance we must a change in multiple places).
 {: .callout}
 
 We will look at these issue in more detail and consider ways to fix them as we go through more examples.
@@ -275,7 +281,7 @@ The most common are
 
 * AND ‘&&’ 
 
-* OR ‘||’ 
+* OR ‘\|\|’ 
 
 * NOT ‘!’ (negation)  
 
@@ -301,16 +307,17 @@ if (storm == TRUE && (day == "saturday" || day == "sunday")){ #even if it's stor
 This may look more complicated, but we are stringing the conditionals we already considered with logical operators (i.e., IF storm is true AND the day is (Saturday OR Sunday)).
 
 >## Question
-> ***What do you think the consequence of removing the brackets will be?*** 
->Hint: Change storm <- FALSE, day <- "sunday". What happens? What should happen?
+> ***What do you think the consequence of removing the brackets will be?***  
+>Hint: Change storm <- FALSE, day <- "sunday".  
+>What happens? What should happen?
 {: .callout}  
 
-You need to ensure that you are explicit with the conditional operations by using brackets.
+You need to ensure that you are explicit with the conditional operations by using brackets, this will allow you to combine without encountering unwanted behaviour.
 
-We have covered a brief introduction to the basic building blocks of flow control. Hopefully you have grasped with the few tools we have considered you can develop sophisticated flow control. There are more tools to consider to be fully competent on all aspects of flow control. However, they fall outside of the scope of this course.    
+We have covered a brief introduction to the basic building blocks of flow control. Hopefully you have grasped, with the few tools we have considered, that you can develop sophisticated flow control. There are more tools to consider to be fully competent on all aspects of flow control. However, they fall outside of the scope of this course.    
 
 We have included a source to provide a starting point for you to explore advanced flow control if you wish to (e.g., switch statements, loops etc.): 
 
 [Starting point for advanced flow control](https://adv-r.hadley.nz/control-flow.html )
 
-Note: If you have coding experience you may have used loops many times. In R loops can be problematic due to performance issue with memory allocation on large datasets. It is not a beginner-friendly topic, this in part is why we have excluded them from this introduction to workflow.   
+Note: If you have coding experience you may have used loops before. In R loops can be problematic due to performance issue with memory allocation on large datasets. It is not a beginner-friendly topic; this in part, is why we have excluded them from this introduction to workflow.   
