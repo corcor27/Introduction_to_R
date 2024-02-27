@@ -1,7 +1,7 @@
 ---
 title: "Plotting in R with ggplot2"
-teaching: 15
-exercises: 10
+teaching: 10
+exercises: 5
 questions:
 - "How do I create plots?"
 - "How do I use data sets to populate my plot?"

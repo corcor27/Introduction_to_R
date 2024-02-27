@@ -1,7 +1,7 @@
 ---
 title: "Manipulating data frames"
-teaching: 15
-exercises: 5
+teaching: 20
+exercises: 10
 questions:
 - "How do I access data out of data frames?"
 objectives:

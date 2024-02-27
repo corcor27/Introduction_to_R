@@ -1,7 +1,7 @@
 ---
 title: "Packages in R"
 teaching: 5
-exercises: 5
+exercises: 0
 questions:
 - "How do I install packages?"
 - "How do I get help with packages?"

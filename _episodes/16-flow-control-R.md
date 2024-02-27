@@ -1,7 +1,7 @@
 ---
 title: "Flow control"
-teaching: 30
-exercises: 15
+teaching: 25
+exercises: 5
 questions:
 - "How do we get our code to react dynamically?"
 - "How do we delegate repetative task and decisions?"

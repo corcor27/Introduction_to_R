@@ -1,7 +1,7 @@
 ---
 title: "Functions"
 teaching: 15
-exercises: 10
+exercises: 5
 questions:
 - "How do I make my own function?"
 - "Why would I want to make my own function?" 

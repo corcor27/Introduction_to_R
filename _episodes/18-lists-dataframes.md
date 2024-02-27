@@ -1,7 +1,7 @@
 ---
 title: "Lists and Data frames"
-teaching: 15
-exercises: 5
+teaching: 10
+exercises: 0
 questions:
 - "What other data structures are there?"
 objectives:

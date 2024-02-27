@@ -1,7 +1,7 @@
 ---
 title: "RStudio Layout, navigating the IDE, project setup"
-teaching: 10
-exercises: 5
+teaching: 5
+exercises: 0
 questions:
 - "How is RStudio layed out?"
 - "How do we create a project and why is it important?"
