@@ -296,4 +296,4 @@ With this we will get all columns not in the list.
 
 ### Many more options
 
-The complexity of subsetting data is going to depend on the task at hand. The scope of this session does not allow us to explore all eventualities but should give you a base understanding of how to effectively subset your data.
+The complexity of subsetting data is going to depend on the task at hand. The scope of this session does not allow us to explore all eventualities but should give you a base understanding of how to effectively subset your data. There are also packages designed specifically for manipulating data frames (e.g.,plyr, dplyr and tidyr). Allthough it is possible to achieve similar results using base R functions, these packages provide a more efficient and convenient way to work with data, especially for tasks involving data manipulation, summarization, and reshaping. 
