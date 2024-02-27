@@ -3,12 +3,11 @@ title: "Manipulating data frames"
 teaching: 15
 exercises: 5
 questions:
-- "What other data structures are there?"
+- "How do I access data out of data frames?"
 objectives:
-- "Understand the use of vectors, lists, and data frames."
+- "Understand the fundemetnals of addressing data frames."
 keypoints:
-- "Data frames are lists of vectors."
-- "Data frames are the most common way of storing tabular data"
+- "The complexity of the process is related to the complexity of the conditions for data you want to retrieve. "
 ---
 
 ## Datasets
