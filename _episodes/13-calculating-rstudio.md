@@ -1,7 +1,7 @@
 ---
 title: "Calculating in RStudio"
-teaching: 15
-exercises: 10
+teaching: 10
+exercises: 5
 questions:
 - "How do we process mathmatical operations in RStudio?"
 objectives:

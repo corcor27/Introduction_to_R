@@ -1,7 +1,7 @@
 ---
 title: "Seeking help"
 teaching: 10
-exercises: 2
+exercises: 0
 questions:
 - "Where can I find help?"
 objectives:

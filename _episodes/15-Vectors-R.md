@@ -1,7 +1,7 @@
 ---
 title: "Vectors and vectorisation"
-teaching: 30
-exercises: 10
+teaching: 15
+exercises: 5
 questions:
 - "How do we deal with many variables?"
 objectives:

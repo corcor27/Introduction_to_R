@@ -2,7 +2,7 @@
 title: "Variables and assignment"
 author: "Colin Sauze, Ed Bennett, Jarno Rantaharju, Thomas Green"
 teaching: 15
-exercises: 10
+exercises: 5
 questions:
  - "What can we store in variables?"
  - "What is good practice for variable naming?"
