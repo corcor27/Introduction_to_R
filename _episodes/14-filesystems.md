@@ -21,16 +21,18 @@ keypoints:
 We don’t just want RStudio to be our calculator. We want to be able to store and manipulate data in a meaningful way. We want to perform operations on data, possibly many times. It would be useful to have a clarity and context for the data we are using; ideally descriptive names to make our data more manageable.
 
 ### Data types 
-R utilises different data types to efficiently store and manipulate different kinds of data. We will look at the most common data types in R.
+R utilises different data types to efficiently store and manipulate different kinds of data. R is dynamical typed; this means that you do not need to specify a data type when you declare a variable. You can give the variable name and the data you want to store and let R worry about how it deals with that. We will look at the most common data types in R.
   
 Data type | Example
 ------------ | -------------
 Numeric | integers (0, 5, 102) & doubles (0.75, 5.17, 102.6)
 Character | "Hello"
 Logical | TRUE/FALSE
-Factor | small, medium, large
+Factor | (small, medium, large)
   
->***Context:*** R is dynamical typed; this means that you do not need to specify a data type when you declare a variable. You can give the variable name and the data you want to store and let R worry about how it deals with that.  
+>***Factor:***
+> We are not going to explore factors in this section but we will introduce them.
+> Factors are used to represent categorical data, which consists of a fixed number of distinct levels (categories).Factors are particularly useful for representing nominal (e.g., married, single, divorced) or ordinal data (e.g., small, medium, large).
   
 ### Defining variables
 Let's go ahead and define some variables. Into the console type:  
