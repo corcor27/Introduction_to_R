@@ -3,7 +3,7 @@ title: "Vectors and vectorisation"
 teaching: 15
 exercises: 5
 questions:
-- "How do we deal with many variables?"
+- "How do we mange many variables efficiently?"
 objectives:
 - "Be able to declare, manipulate, and address vectors."
 - "Understand the process and role of vectorisation."
@@ -13,7 +13,7 @@ keypoints:
 - "Vectors can be indexed by multiple methods to retrieve/manipulate the specific information you desire"
 ---
 
-### What happens when we have to deal with increasing data sizes?
+### What happens when we have to deal with multiple variables?
 
 It may have occurred to you that dealing with variables individually is going to be less and less efficient as our data size set gets significantly larger. We are going to explore how we can store and organise our data in some useful ways.
 
@@ -45,17 +45,17 @@ num_sequence <- seq(0,1, by =0.1)
 ```
 {: .language-r}
 
-Congratulations we should now have four vectors, explore them in the environment tab. Are they what you were expecting?
+Congratulations we now have four vectors, explore them in the environment tab. Are they what you were expecting?
 
 
-Can you determine how they work?
+Can you determine how each one works?
 1. ‘rep()’
 2. ‘:’ 
 3. ‘seq()
 
 You can always look them up using the help pane if you are not sure.
 
-### Addressing and manipuklating vectors
+### Addressing and manipulating vectors
 
 Once created, it is possible we may want to modify the variables in our vector.
 
@@ -186,13 +186,14 @@ We may want to apply an operation that does not exist as an in-built function, T
 ```
 temperatures <- temperatures * 9/5 + 32 
 ```
-{: .languare-r}
+{: .language-r}
 
 We have explicitly told R to save the output back into the 'temperatures' vector. Use the environment pane to explore what we have created. All the temperatures have been converted from Celsius to Fahrenheit.
 
-Sometimes we may only want to change certain values in a vector. 
+### Make changes but only to specific items.
 
-### Find all the variables that are higher than 80 Fahrenheit and increase them by 10.
+Sometimes we may only want to change certain variables in a vector based on their value. 
+**Exammple:** Find all the variables that are higher than 80 Fahrenheit and increase them by 10.  
 First we need to find out which variables fit our requirement  
 ```
 above_70 <- temperatures > 70 
@@ -211,7 +212,7 @@ temperatures[above_70] <- temperatures[above_70] + 10
 ```
 {: .languare-r} 
 
-Check the results in your environment pane they should be modified.
+Check the results in your environment pane they should be modified. This is an example of how we can modify vectors but there are many different ways to address and manipulate vectors based on your required output.
 
 {: .language-r}
 

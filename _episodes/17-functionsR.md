@@ -3,11 +3,11 @@ title: "Functions"
 teaching: 15
 exercises: 5
 questions:
-- "How do I make my own function?"
-- "Why would I want to make my own function?" 
+- "How do I make my own functions?"
+- "Why would I want to make my own functions?" 
 objectives:
 - "Understand function structure"
-- "Know how touse the 'apply' family of functions"
+- "Know how to use the 'apply' family of functions"
 keypoints:
 - "Functions can help reduce redundancy and increase reusability in your code"
 ---
@@ -18,9 +18,9 @@ So far, we have been using in-built functions. For exmaple you type ‘sqrt()’
 
 ### Function structure 
 
-> my_function <- function(parameters) {     
-> perform action
-> return value
+> my_function <- *function*(parameters) {     
+> perform action  
+> return value  
 > }
 
 ### Function example
@@ -56,7 +56,7 @@ source("my_functions.R")
 ```
 {: .language-r}
 
-We can now run this function from this my_first_script.
+We can now run this function from my_first_script.
 
 ```
 celc_to_fahr(14) 
@@ -68,7 +68,7 @@ celc_to_fahr(14)
 ```
 {: .output}
 
-If you have generalised functions that you use often in different scripts. It is good practice to store them in a script file. You can then into any project where you need them. This reduces rewriting and editing code, and reduces the chance of you introducting errors (e.g., typos, caluclation errors, etc.).
+If you have generalised functions that you use often in different scripts. It is good practice to store them in a script file. You can then import them into any project that you need them for. This reduces rewriting and editing code, and reduces the chance of you introducting errors (e.g., typos, caluclation errors, etc.).
 
 If we want to run this method on multiple variables, we can use the sapply() method. This method takes data and a function. It then applies the function to every variable from the data you provided. 
 
@@ -88,10 +88,16 @@ For more information on the common apply family functions, you can check:
 ```
 {: .language.R}
 
-> ### But wait! 
->You might be confused and thinking; the output ‘fahrenheit_temps’ looks like an identical output to “temperatures <- temperatures * 9/5 + 32” that we processed earlier. Very well spotted, we have used a slightly redundant but very simple example to highlight the process. In the future you may want to create much more complicated functions that you want to apply to large datasets, this was just a toy example to show you how. 
+### But wait!  
+You might be confused and thinking; the output:  
+```
+‘fahrenheit_temps’
+``` 
+looks like an identical output to 
+```
+temperatures <- temperatures * 9/5 + 32
+```
+that we processed earlier.  
+Very well spotted, we have used a slightly redundant but very simple example to highlight the process. In the future you may want to create much more complicated functions that you want to apply to large datasets, this was just a toy example to show you how. 
 {: .challenge}
 
-
-
-{% include links.md %}

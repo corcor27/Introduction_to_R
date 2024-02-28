@@ -40,12 +40,12 @@ Let's go ahead and define some variables. Into the console type:
 ```
 x <- 10
 ```
-{: .input}  
+{: .language-r}  
 
 ```
 y = 5
 ```
-{: .input}  
+{: .language-r}  
 
 
 The variables x and y should now have populated your environment screen. We can inspect them, but they are relatively predictable. 
@@ -66,20 +66,20 @@ Let's add a few other variables of different variable types, Try:
 ```
 my_name <- "your name"
 ```
-{: .input}
+{: .language-r}
 
 ```
 likes_rstudio <- TRUE
 ```
-{: .input}
+{: .language-r}
   
 
-Now we have created variables we can now refer to them in the console. Type:  
+Now we have created some variables we can try refering to them in the console. Type:  
 
 ```
 x + 5
 ```
-{: .input}
+{: .language-r}
 
 ```
 15
@@ -95,7 +95,7 @@ Now try:
 ```
 x <- x + 5
 ```
-{: .input}
+{: .language-r}
 
 When you check the variable again in the environment tab you should now notice that it is 15. This is a key concept to recognise; we can perform an operation and the resulting output will be shown but unless we explicitly assign it the change will not be saved.
 
@@ -104,7 +104,7 @@ When you check the variable again in the environment tab you should now notice t
 Variable naming is important but often overlooked by new programmers (and experienced programmers). It is not trivial to think of meaningful concise variable names. The first thing to understand is that R has some restrictions and rules for variable naming:  
 
  
-* Variable names are cases sensitive.  
+* Variable names are cases sensitive (My_name is different to my_name).  
 
 * They must start with a letter or a period. 
 
@@ -125,7 +125,7 @@ It may seem fussy but there are actually not that many enforced restrictions com
 
  
 
-Although some may disagree with us, we believe for most users it does not matter which convention you pick. There are two key principles for variable naming that we recommend that should make your life easier: 
+Although some may disagree with us, we believe for most users it does not matter which convention you pick. There are two key principles for variable naming, that we recommend, that should make your life easier: 
 
  
 
@@ -162,7 +162,7 @@ We have added numeric values together so now lets try combining characters. Try:
 ```
 my_name <- my_name + "your surname"
 ```
-{: .input}
+{: .language-r}
 
 ```
 Error in my_name + "your surname" : 
@@ -177,9 +177,9 @@ We know that we are dealing with characters, in R the '+' is an operator that do
 ```
 my_name <- paste(my_name, "your surname") 
 ```
-{: .input}
+{: .language-r}
 
-When you check the variable in the environment tab you should see that it is updated. 
+When you check the variable in the environment tab you should see that it is updated. It is important to realise that some operators and methods are data type specific.
 
 >## Useful tool
 >* ***class()*** and ***typeof()***  
@@ -189,7 +189,7 @@ When you check the variable in the environment tab you should see that it is upd
 ```
 class(x)
 ```
-{: .input}
+{: .language-r}
 
 ```
 "numeric"
@@ -199,7 +199,7 @@ class(x)
 ```
 typeof(x)
 ```
-{: .input}
+{: .language-r}
 
 ```
 "double"
@@ -211,13 +211,13 @@ We find that x is a double. Even though the value 5 is an integer, R stores it a
 ```
 a <- 5L
 ```
-{: .input}
+{: .language-r}
 We can let R know at decleration that we want the value as an integer.
 
 ```
 x <- as.integer(x)
 ```
-{: .input}
+{: .language-r}
 We can cast the value to an integer using the R inbuilt function.
 
 In the environment tab you should see that both variables now show as '5L'. If we try again:
@@ -225,7 +225,7 @@ In the environment tab you should see that both variables now show as '5L'. If w
 ```
 class(x)
 ```
-{: .input}
+{: .language-r}
 
 ```
 "numeric"
@@ -235,7 +235,7 @@ class(x)
 ```
 typeof(x)
 ```
-{: .input}
+{: .language-r}
 
 ```
 "integer"
@@ -243,5 +243,5 @@ typeof(x)
 
 ### Summary
 
-Most of the time data types will not be of great concern to you. However, it is worth remembering that when you ask R to read and organise data it is making assumptions on the data types. Sometimes those assumptions can be wrong and could lead to unexpected outcomes. We will consider this in more detail later in the course. 
+Most of the time data types will not be of great concern to you. However, it is worth remembering that when you ask R to read and organise data, unless you are explicity, you are asking it to make assumptions on the data types. Sometimes those assumptions can be wrong and could lead to unexpected outcomes. We will consider this in more detail later in the course. 
 
