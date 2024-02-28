@@ -6,24 +6,24 @@ questions:
 - "How is RStudio layed out?"
 - "How do we create a project and why is it important?"
 objectives:
-- "Be familair with the panes contained with RStudio"
+- "Be familiar with the panes contained within RStudio"
 - "Be confident creating a new project and new script files"  
 keypoints:
 - "R and RStudio are not the same thing. RStudio is an IDE that provides you with a convinient way to manage R projects and R is the underlying language that enables RStudio."
-- "You will not learn everything about RStudio in a day, there are a huge number of tools available to you in RStudio. The more time you commit to exploring and practicing the more you will achieve."
+- "You will not learn everything about R or RStudio in a day, there are a huge number of tools available to you in RStudio. The more time you commit to exploring and practicing the more you will achieve."
 - "Project management is a vital part of ensuring that you are producing maintainable, sharable, and robust software."
 ---
 
 ## Starting a new project:
->Let us start by exploring the major features of we will use for this course in RStudio. Our first aim is to become more familiar with the interface.  
+>Let us start by exploring the major features we will use for this course in RStudio. Our first aim is to become more familiar with the interface.  
 >Start by generate a new project (name it **‘my_first_r_project’**).  
 >Next, open a new script file (name it **'my_first_r_script’**).  
 >  
 >**Instructions**  
 >* From the main menu select **‘File’ > ‘new project’ > ‘new directory’ > ‘new project’**.   
 >* You will be prompted for a directory name for your project and a file path where you want to create the project.   
->* Name your project “OneZoo_Rintro" and choose the folder you previously created as your set-up worksheet.  
->* Open a new script using the small green plus button in the top right pane.  
+>* Name your project “OneZoo_Rintro" and choose the folder you previously created as part of your set-up worksheet.  
+>* Open a new script using the small green plus button above the top left pane.  
 
 {% include figure.html max-width="100%" file="/fig/rstudioIDE.png" 
 alt="RStudio pane layout on first initialisation" caption="Figure 1: RStudio layout you should expect to see (OS and version dependant)" %}
@@ -35,7 +35,7 @@ alt="RStudio pane layout on first initialisation" caption="Figure 1: RStudio lay
 
 >## Bottom left
 >* **Console pane:**  
->This is the console pane. It should be prepopulated with text detailing things the version of R you are currently using, among other things. The console is your primary interface with the R programming language. You will use it often for inputting prompts and displaying outputs.  
+>This is the console pane. It should be prepopulated with text detailing the version of R you are currently using, among other things. The console is your primary interface with the R programming language. You will use it often for inputting prompts and displaying outputs.  
 {: .callout}
 
 >## Top left
@@ -55,7 +55,7 @@ Much of your initial learning time in R will be spent in the R interactive conso
 
 >## Top Right
 >* **Environment pane:**  
->The environment pane provides a convenient way to inspect, manage, and interact with the objects and variables in your R environment. This view should help give you an insight into your data and allow you to interact with it more efficiently.
+>The environment pane provides a convenient way to inspect, manage, and interact with the variables in your R environment. This view will also help by giving you an insight to your data and allow you to interact with it more efficiently.
 >* **History pane:**  
 >The History pane in RStudio provides a convenient way to review and manage your command history. It has a button that pushes a selected command into your script pane that you may find handy.
 {: .callout}
@@ -78,7 +78,7 @@ Much of your initial learning time in R will be spent in the R interactive conso
 ### Question: We have created a project in RStudio but what can go wrong if we don’t? 
 Typical problems caused by poor project management. 
 
-1. ***Poor maintainability*** – You may remember the ad-hoc system you used for naming and organising files and folders but when youcome back to a project a week, a month or a year later will you still remember? If someone is collaborating with you will it make any sense to them? 
+1. ***Poor maintainability*** – You may remember the ad-hoc system you used for naming and organising files and folders but when you come back to a project a week, a month, or a year later will you still remember? If someone is collaborating with you will it make any sense to them? 
 
 2. ***Data corruption*** – Defensive steps (e.g., naming convention, back-ups, read only files) will protect your data. It can be very easy to accidently modify data that should be static. Losing/corrupting data can be catastrophic for projects.
 
@@ -96,5 +96,3 @@ There is no ‘best’ way to manage a project, there are general principles tha
 
 5. ***Backup:*** Ensuring your data and your project is backed up is vital. Consider a minimum of one local-backup and one online-backup.     
 
-
-{% include links.md %}

@@ -9,7 +9,7 @@ objectives:
 - "Know where to look for answers and how to ask the right questions"
 keypoints:
 - "You will get stuck at some point, needing help is a case of when not if."
-- "Help is available put is is important you have done your due diligence and are asking in the correct places in the correct format."
+- "Help is available put is is important you have done your due diligence and are asking for help in the correct places and in the correct format."
 ---
 
 ## What do I do when I need help?
@@ -31,7 +31,7 @@ alt="Help pane showing getwd() function" caption="Figure 1: Your help pane shoul
   
 ### Help output
 
-Each help page is broken down into these sections:  
+Each function help page is broken down into these sections:  
 * **Description:** An extended description of what the function does.
 * **Usage:** The arguments of the function and their default values (which can be changed).
 * **Arguments:** An explanation of the data each argument is expecting.
@@ -80,5 +80,3 @@ Here we provide some external links providing useful references and cheat sheets
 
 [R beginner's cheat sheets](https://www.datacamp.com/cheat-sheet/getting-started-r)
 
-
-{% include links.md %}

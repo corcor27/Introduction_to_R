@@ -5,7 +5,7 @@ exercises: 5
 questions:
 - "How do we process mathmatical operations in RStudio?"
 objectives:
-- "Become familiar with mathmatical operators and in-buiilt functions in RStudio."
+- "Become familiar with mathmatical operators and in-built functions in RStudio."
 - "Become confident using the console to run mathmatical operations."
 - "Understand the order of operations."
 keypoints:
@@ -14,12 +14,12 @@ keypoints:
 ---
 
 ### Dipping our toes
-We have covered some relatively dry theory so let’s take some small steps and start interacting with R. From the console we can start exploring calculation. Write in the following commands.
+We have covered some relatively dry theory so let’s take some small steps and start interacting with R. From the console we can start exploring calculation. Write in the following commands:
 
 ```
 10 – 5 #(subtraction) 
 ```
-{: .input}
+{: .language-r}
 
 ```
 5
@@ -31,7 +31,7 @@ We have covered some relatively dry theory so let’s take some small steps and 
 ```
 10 + 5 #(addition) 
 ```
-{: .input}
+{: .language-r}
 
 ```
 15
@@ -43,7 +43,7 @@ We have covered some relatively dry theory so let’s take some small steps and 
 ```
 10 * 5 #(multiplication) 
 ```
-{: .input}
+{: .language-r}
 ```
 50
 ```
@@ -54,7 +54,7 @@ We have covered some relatively dry theory so let’s take some small steps and 
 ```
 10 / 5 #(division) 
 ```
-{: .input}
+{: .language-r}
 
 ```
 2
@@ -66,7 +66,7 @@ We have covered some relatively dry theory so let’s take some small steps and 
 ```
 5 ^ 2 #(exponentiation) 
 ```
-{: .input}
+{: .language-r}
 ```
 25
 ```
@@ -77,7 +77,7 @@ We have covered some relatively dry theory so let’s take some small steps and 
 ```
 10 %% 3 #(modulus)  
 ```
-{: .input}
+{: .language-r}
 ```
 1
 ```
@@ -88,14 +88,14 @@ We have covered some relatively dry theory so let’s take some small steps and 
 
 > ## Question: Before you enter the next calculation, take a second and consider what answer would you be expecting?
 ```
-5 + 10 / 3 
+6 + 9 / 3 
 ```
-{: .input}
+{: .language-r}
 {: .challenge }
 
 
 ```
-8.333333
+9
 ```
 {: .output}
 
@@ -121,9 +121,9 @@ This tells you what order mathematical operations will be performed and ensures 
 To make this concept clearer, try: 
 
 ```
-(5 + 10) / 3 
+(6 + 9) / 3 
 ```
-{: .input}
+{: .language-r}
 
 ```
 5
@@ -139,7 +139,7 @@ Base R provides you with a range of built in mathematical functions. If you need
 ```
 sqrt(9) 
 ```
-{: .input}
+{: .language-r}
 ```
 3
 ```
@@ -148,7 +148,7 @@ sqrt(9)
 ```
 abs(-5) 
 ```
-{: .input}
+{: .language-r}
 ```
 5
 ```
@@ -157,14 +157,12 @@ abs(-5)
 ```
 round(3.4) 
 ```
-{: .input}
+{: .language-r}
 ```
 3
 ```
 {: .output}
 
 
-There are a whole range of built in functions that are available. You can check the help reference or a google search will find you a definitive list.
+There are a whole range of built-in functions that are available. You can check the help reference or perform a google search to find a definitive list.
 
-
-{% include links.md %}
