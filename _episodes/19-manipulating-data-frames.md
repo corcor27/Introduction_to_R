@@ -121,6 +121,20 @@ iris [[3]]
 Returns the contents of column 3.
 
 ```
+head(iris)
+``` 
+{: .language.r}
+
+Returns the top 6 results.
+
+```
+tail(iris)
+``` 
+{: .language.r}
+
+Returns the bottom 6 results.
+
+```
 iris$Sepal.Length
 ``` 
 {: .language.r}
