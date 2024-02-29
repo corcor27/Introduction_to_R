@@ -14,7 +14,7 @@ keypoints:
 
 Getting your data into R is the first step to you doing something interesting with it. Click the link below to download a new dataset.
 
-[Download File](..fig/gapminder_data.csv)
+[Download File](../fig/gapminder_data.csv)
 
 Place it in a folder (name the folder ‘data’) and change the file permissions of the dataset to read only. The easiest way to achieve this is to find the document in your file management system, inspect its properties and apply read only. 
 
