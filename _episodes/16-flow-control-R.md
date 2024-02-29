@@ -63,9 +63,10 @@ if (rainfall){
 
 } 
 ```
+{: .language-r}
+
 Note: with logical variables, we don't have to check for equivalence (if (logical_variable) is if (TRUE/FALSE)).
 
-{: .language-r}
 
 {% include figure.html max-width="100%" file="/fig/ifflow2.png" 
 alt="Flow diagrame for if condition" caption="Figure 2: Flow diagram for an if, else condition" %}

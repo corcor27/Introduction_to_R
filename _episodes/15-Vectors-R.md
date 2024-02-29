@@ -198,7 +198,7 @@ First we need to find out which variables fit our requirement
 ```
 above_70 <- temperatures > 70 
 ```
-{: .languare-r}
+{: .language-r}
 
 ```
 TRUE FALSE FALSE  TRUE
@@ -210,11 +210,10 @@ This has created a logical vector that indicates if that index is above 70 using
 ```
 temperatures[above_70] <- temperatures[above_70] + 10 
 ```
-{: .languare-r} 
+{: .language-r} 
 
 Check the results in your environment pane they should be modified. This is an example of how we can modify vectors but there are many different ways to address and manipulate vectors based on your required output.
 
-{: .language-r}
 
 
 

@@ -75,7 +75,7 @@ If we want to run this method on multiple variables, we can use the sapply() met
 ```
 fahrenheit_temps <- sapply(temperatures,  celc_to_fahr) 
 ```
-{: .language.R}
+{: .language.r}
 
 For more information on the common apply family functions, you can check: 
 
@@ -86,7 +86,7 @@ For more information on the common apply family functions, you can check:
 
 ?apply() 
 ```
-{: .language.R}
+{: .language.r}
 
 ### But wait!  
 You might be confused and thinking; the output:  
@@ -99,5 +99,5 @@ temperatures <- temperatures * 9/5 + 32
 ```
 that we processed earlier.  
 Very well spotted, we have used a slightly redundant but very simple example to highlight the process. In the future you may want to create much more complicated functions that you want to apply to large datasets, this was just a toy example to show you how. 
-{: .challenge}
+
 
