@@ -17,14 +17,14 @@ Packages extend the functionality of base R by providing additional functions, d
 ```
 install.packages(“package_name”)
 ```
-{: .language.R}
+{: .language.r}
 
 Installation only needs to be done once no matter how many projects you start. To use the package in RStudio, you need to ensure that you type:
 
 ```
 library(package_name) 
 ```
-{: .language.R}
+{: .language.r}
 
 > Note:   
 > This will need to be added to the beginning of every script that needs this package
@@ -33,3 +33,8 @@ library(package_name)
 ### Help with packages
 
 Many packages come with vignettes (tutorials and extended example documentation). Without any arguments, ‘vignette()’ will list all vignettes for all installed packages, ‘vignette(package=’package-name’)’ will list all available vignettes for ‘package-name’, and vignette(‘vignette-name’) will open the specified vignette. If a package doesn’t have any vignettes, you can usually find help by typing help(‘package-name’).
+
+```
+vignette("ggplot2")
+```
+{: .language.r}

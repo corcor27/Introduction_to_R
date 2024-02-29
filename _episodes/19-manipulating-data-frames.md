@@ -3,11 +3,11 @@ title: "Manipulating data frames"
 teaching: 20
 exercises: 10
 questions:
-- "How do I access data out of data frames?"
+- "How do I access the data stored in data frames?"
 objectives:
 - "Understand the fundemetnals of addressing data frames."
 keypoints:
-- "The complexity of the process is related to the complexity of the conditions for data you want to retrieve. "
+- "The complexity of the process is related to the complexity of the conditions for retrieving the data you want. "
 ---
 
 ## Datasets
@@ -17,7 +17,7 @@ In R, there are several built-in datasets and many more available in various pac
 ```
 iris
 ``` 
-{: .language.R}
+{: .language.r}
 
 ```
 Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
@@ -27,23 +27,23 @@ Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
 149          6.2         3.4          5.4         2.3  virginica
 150          5.9         3.0          5.1         1.8  virginica
 ```
-{: .ouput}
+{: .output}
 
 Additionally, you can use the data() function to load any built-in dataset into your R session.
 
 ```
 data(iris)
 ``` 
-{: .language.R}
+{: .language.r}
 
 You will now be able to view the iris dataset in your environment pane (selecting it will open it as a file in your script pane).
 
-We first want to explore what high-level inforamtion RStudio can give us about the iris dataset.
+We first want to explore what high-level information RStudio can give us about the iris dataset.
 
 ```
 str(iris)
 ``` 
-{: .language.R}
+{: .language.r}
 
 ``` 
 'data.frame':	150 obs. of  5 variables:
@@ -53,14 +53,14 @@ str(iris)
  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
 ```
-{: .ouput}
+{: .output}
 
 From the output, you can see that the iris dataset has 150 observations and 5 variables. The variables include numeric variables (Sepal.Length, Sepal.Width, Petal.Length, Petal.Width) and a factor variable (Species). The factor variable Species has three levels: "setosa", "versicolor", and "virginica". Additionally, it shows the first few observations of the dataset.
 
 ```
 summary(iris)
 ``` 
-{: .language.R}
+{: .language.r}
 
 ``` 
 Sepal.Length    Sepal.Width     Petal.Length    Petal.Width          Species  
@@ -71,7 +71,7 @@ Sepal.Length    Sepal.Width     Petal.Length    Petal.Width          Species
  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800                  
  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500
 ```
-{: .ouput}
+{: .output}
 
 The summary() function in this case, provides:
 
@@ -86,12 +86,12 @@ The summary() function in this case, provides:
 ```
 dim(iris)
 ``` 
-{: .language.R}
+{: .language.r}
 
 ``` 
 150 5
 ```
-{: .ouput}
+{: .output}
 
 The dim() fuctions provides the dimensions of the dataset. 150 rows, 5 columns.
 
@@ -100,7 +100,7 @@ Next we can look at the data in more detail. Type but do not press enter:
 ```
 iris$
 ``` 
-{: .language.R}
+{: .language.r}
 
 You should see an autocomplete option panel for every column name in the dataset. Select one and press enter. This will show you all the content from this column.
 
@@ -109,59 +109,59 @@ There are several subtly different ways to call variables, observations, and ele
 ```
 iris [3]
 ``` 
-{: .language.R}
+{: .language.r}
 
 Returns a dataframe with just column 3.
 
 ```
 iris [[3]]
 ``` 
-{: .language.R}
+{: .language.r}
 
 Returns the contents of column 3.
 
 ```
 iris$Sepal.Length
 ``` 
-{: .language.R}
+{: .language.r}
 
 Returns the contents of column 3. ($ operator is used to extract variables)
 
 ```
 iris [3, 3]
 ``` 
-{: .language.R}
+{: .language.r}
 
 The syntax iris \[row_index, column_index\]. So this returns the item in the 3rd row and in the 3rd column.
 
 ```
-iris [, 3]
+iris [, r]
 ``` 
-{: .language.R}
+{: .language.r}
 
 Returns the contents of column 3.
 
 ```
 iris [3, ]
 ``` 
-{: .language.R}
+{: .language.r}
 
 Returns the contents of row 3.
 
-Consider that columns will be returned as vectors and rows as lists.
+Be clear that calling columns will be return vectors and calling rows will return lists.
 
 ### Adding and removing columns and rows
 
-***Add column***
+***Add column***  
 We know that columns are vectors so we can generate a new vector and add it to our dataset:
 ```
 num_petals <- rep(4, 150) # we are assuming all the flowers have four petals for the sake of this example 
 ``` 
-{: .language.R} 
+{: .language.r} 
 ```
 iris <- cbind(iris, num_petals)
 ``` 
-{: .language.R} 
+{: .language.r} 
 
 >Note:  
 >If you try and inspect the data in output in the console you may get a warning that you have reached your max.print and rows have been omitted. 
@@ -170,37 +170,37 @@ iris <- cbind(iris, num_petals)
 ```
 options(max.print = n) # n being the number of elements to print
 ``` 
-{: .language.R} 
+{: .language.r} 
 
 ***Remove column***
 
-To remove the column, we want to provide the index of the column we want to remove, we are asking for all the columns minus the specified column.
+To remove the column, we want to provide the index of the column we want to remove (you can think of it as we are asking for all the columns, minus the specified column.)
 ```
 iris <- iris[,-6] # remove the pointless column we just added
 ``` 
-{: .language.R} 
+{: .language.r} 
 
 
-***Add row***
-Rows are lists, so we need to generate a new list that matches our dataset. 
+***Add row***  
+Remember, rows are lists, so we need to generate a new list that matches our dataset. 
 ```
 new_row <- list(5.4, 3.2, 4.9, 1.9, "setosa")
 ``` 
-{: .language.R} 
+{: .language.r} 
 
 ```
 iris <- rbind(iris, new_row)
 ``` 
-{: .language.R} 
+{: .language.r} 
 
 
-***Remove row***
+***Remove row***  
 Removing rows is very similar to removing columns:
 
 ```
 iris <- iris[-151,]
 ``` 
-{: .language.R} 
+{: .language.r} 
 
 Note: If you have added multiple new rows, you can also pass in a vector of rows to be removed (e.g., iris[-c(151:153),])
 
@@ -210,7 +210,7 @@ Now we will consider more complicated selections of the data. We have seen that 
 ```
 iris[c(1,2,1,3,1,4)]
 ``` 
-{: .language.R} 
+{: .language.r} 
 
 ``` 
 		Sepal.Length Sepal.Width Sepal.Length.1 Petal.Length Sepal.Length.2 Petal.Width
@@ -218,13 +218,13 @@ iris[c(1,2,1,3,1,4)]
 2            4.9         3.0            4.9          1.4            4.9         0.2
 ...
 ```
-{: .ouput}
+{: .output}
 
 
 ```
 iris[2:4]
 ``` 
-{: .language.R} 
+{: .language.r} 
 
 ``` 
 		Sepal.Width Petal.Length Petal.Width
@@ -232,12 +232,12 @@ iris[2:4]
 2           3.0          1.4         0.2
 ...
 ```
-{: .ouput}
+{: .output}
 
 ```
 iris[-(2:4)]
 ``` 
-{: .language.R} 
+{: .language.r} 
 
 ``` 
 	Sepal.Length    Species
@@ -245,9 +245,9 @@ iris[-(2:4)]
 2            4.9     setosa
 ...
 ```
-{: .ouput}
+{: .output}
 
-Note that we are not using ‘iris <-‘ before our commands so we are not changing the original structure. We could be creating subsets of our data if we were assigning it to a new variable (i.e., subset_iris <- iris\[2:4\]).
+Note that we are not using ‘iris <-‘ before our commands so we are not changing the original structure. We could be creating subsets of our data if we were assigning it to a new variable (e.g., subset_iris <- iris\[2:4\]).
 
 ### Subsetting by name
 
@@ -256,7 +256,7 @@ We have been selecting by index up until this point. However, indexes can change
 ```
 iris[c("Sepal.Length","Sepal.Width")]
 ```
-{: .language.R} 
+{: .language.r} 
 
 Using names to index requires us to use a different syntax than indexing with numbers (think back to data types and their operations, Sepal.Length":"Sepal.Width does not make sense). If we combine that with our understanding of how logical operators worked, we have the building blocks for how we are going to address a data frame using column names.
 
@@ -265,7 +265,7 @@ To provide some clarity, type:
 ```
 iris[c(FALSE, TRUE, FALSE, TRUE, TRUE, FALSE)]
 ```
-{: .language.R} 
+{: .language.r} 
 
 ``` 
     Sepal.Width Petal.Width    Species
@@ -273,15 +273,15 @@ iris[c(FALSE, TRUE, FALSE, TRUE, TRUE, FALSE)]
 2           3.0         0.2     setosa
 ...
 ```
-{: .ouput}
+{: .output}
 
 
-This is indexing with logical operators. We can use a new operator that we have not looked at yet '%in%'. This operator is used to check if elements in one vector are present in another vector. It returns a logical vector indicating whether each element of the first vector is found in the second vector. 
+This is indexing with logical operators. We can use a new operator that we have not looked at yet **'%in%'**. This operator is used to check if elements in one vector are present in another vector. It returns a logical vector indicating whether each element of the first vector is found in the second vector. 
 
 ```
 iris[, ! names(iris) %in% c(“Sepal.Length”, "Sepal.Width")] # notice the negation
 ```
-{: .language.R} 
+{: .language.r} 
 
 ``` 
     Petal.Length Petal.Width    Species
@@ -289,7 +289,7 @@ iris[, ! names(iris) %in% c(“Sepal.Length”, "Sepal.Width")] # notice the neg
 2            1.4         0.2     setosa
 ...
 ```
-{: .ouput}
+{: .output}
 
 With this we will get all columns not in the list.
 

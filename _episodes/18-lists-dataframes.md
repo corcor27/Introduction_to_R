@@ -14,24 +14,28 @@ keypoints:
 
 ### Lists
 
-We will take a brief look at lists. At first glance may seem very similar to vectors but we are going to cover some key differences. Lists can hold different data types they are not restricted to a single data type like vectors. They also can hold vectors. matrices, and even other lists which allows them to assume more complicated and hierarchical structures than vectors. Try out: 
+We will take a brief look at lists. At first glance may seem very similar to vectors but we are going to cover some key differences. 
+1. Lists can hold different data types they are not restricted to a single data type like vectors
+2. They also can hold vectors. matrices, and even other lists which allows them to assume more complicated and hierarchical structures than vectors.  
+
+Try out: 
 
 ```
 list_example <- list(1, “hello”, TRUE) 
 ```
-{: .language.R}
+{: .language.r}
 
 ```
 vector_example <- c(1, “hello”, TRUE) 
 ```
-{: .language.R}
+{: .language.r}
 
 If we ouput both structures via the console:
 
 ```
 list_example
 ```
-{: .language.R}
+{: .language.r}
 
 ```
 1 "hello" TRUE
@@ -40,7 +44,7 @@ list_example
 ```
 vector_example
 ```
-{: .language.R}
+{: .language.r}
 
 ```
 "1" "hello" "TRUE"
@@ -60,7 +64,7 @@ To access a specific element in a list you need to address with double brackets 
 ```
 list_example[[3]]
 ```
-{: .language.R}
+{: .language.r}
 
 ```
 TRUE
@@ -70,7 +74,7 @@ TRUE
 ```
 list_example[3]
 ```
-{: .language.R}
+{: .language.r}
 
 ```
 [[1]]
@@ -81,7 +85,7 @@ TRUE
 
 ### Data frames
 
-Data frames are used to store and work with tabular data. They are a two-dimensional data structure where columns must contain the same data type but columns can hold differing data types from other columns (if you think this data structure sounds suspiciously like a list of vectors you are right). Data frames can be created in RStudio from the console but most commonly we are going to want to read them in from a source (e.g., csv file, excel spreadsheet, etc.).  
+Data frames are a great structure to store and manipulate tabular data. They are a two-dimensional data structure where columns must contain the same data type. However, columns can hold differing data types from other columns. If you think this data structure sounds suspiciously like a list of vectors, you are correct. Data frames can be created in RStudio from the console but most commonly we are going to want to read them in from a source (e.g., csv file, excel spreadsheet, etc.).  
 
 {% include figure.html max-width="100%" file="/fig/datastructure.png" 
 alt="Variable, vector, list and dataframe visual representation" caption="Figure 1: Visual representation of how variable types are stored in the different data structures we have explored." %}
