@@ -3,17 +3,24 @@ title: "Practical session"
 teaching: 10
 exercises: 120
 questions:
-- "Q1"
+- "Can you apply the theory to some practical problems?"
 objectives:
-- "Applying theory to practical problems"
+- "Able to inspect data"
+- "Able to create a function"
+- "Able to subset data"
+- "Able to manipulate data"
+- "Able to manipulate flow control"
+- "Able to plot"
 
 keypoints:
 - "Solving problems with R and RStudio will improve your skills and confidence"
 ---
 ### Set up a new project.
+Create a new project and new script. Add a data folder to the project and place the gapminder_data.csv in the data folder. Load the gapminder_data.csv into R. Load the ggplot2 library into your script.
 
-Create a new project and new script. Add a data folder to the project and place the gapminder_data.csv in the data folder. Load the gapminder_data.csv into R.
 ### Inspect the data.
+
+It is important to get an understanding of what is contained in a dataset before you start working with it.
 
 Find:
 1. The number of records in the data set.
@@ -22,15 +29,6 @@ Find:
 4. The data type of each attribute
 5. What are the values for the first 10 records. 
 6. What are the values for the last record in the dataset.
-
-### Create a function 
-
-define a function that calculates the Gross Domestic Product of a nation from the data available in our dataset
-
-
-### Add defensive programming
-
-
 
 
 ### Correct these common subsetting errors.
@@ -96,14 +94,30 @@ Hint: ?unique() may be helpfull here.
 
 Hint: It is not essential but you might find ?any() helpful.
 
+### Create a function 
 
-### Manipulating data
+Define a function that calculates and returns the Gross Domestic Product of a nation (GDP * POP) from the data available in the dataset.
+
+Now modify your function so that it returns the GDP as a new column on the data set.
+
+Now modify your function so that if given a country **or** a year it returns just the data for this selection (e.g., You could specify 'Australia' and get back all years for Australia, you could specifiy '2007' and get all countries in 2007, or you could specify 'Australia' in '2007' and just recieve the data for Australia in 2007).
+
+
+### Add defensive programming
+
+What happens if we pass unexpected values into your function? (Try putting numeric values in as a country or logical value in as a year)
+
+Add some additional checks into your function to make sure that the correct arguments are being passed in. Hint: you could check out ?is.numeric, ?is.character, and ?stopifnot().
+
+### Manipulating data and simple plots
 
 1. Make a new column in the gapminder data frame that contains population in units of millions of people.
 
-2. 
+2. On a single graph, plot population, in millions, against year, for all countries. Do not worry about identifying which country is which.
 
-### Plotting
+3. Repeat the exercise, graphing only for China, India, and Indonesia. Again, do not worry about which is which.
+
+### More plotting
 
 1. a) Using ggplot2 plot a scatter plot of GDP against life expectancy.
 

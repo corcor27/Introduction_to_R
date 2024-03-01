@@ -99,6 +99,19 @@ x <- x + 5
 
 When you check the variable again in the environment tab you should now notice that it is 15. This is a key concept to recognise; we can perform an operation and the resulting output will be shown but unless we explicitly assign it the change will not be saved.
 
+Now try:
+```
+sqrt(x)
+```
+{: .language-r}
+
+```
+3.872983
+```
+{: .output}
+
+Again, you should notice that the variable x is unchanged in the environment pane. That is because R is (*in almost all cases*) **"pass by value"**. This means whatever changes made within the body of the function, stay inside the body of the function. The argument you pass into the function will be unmodified outside of the function.
+
 ## Variable naming
 
 Variable naming is important but often overlooked by new programmers (and experienced programmers). It is not trivial to think of meaningful concise variable names. The first thing to understand is that R has some restrictions and rules for variable naming:  
