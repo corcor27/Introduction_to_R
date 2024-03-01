@@ -123,14 +123,22 @@ Add some additional checks into your function to make sure that the correct argu
 
 ### More plotting
 
-1. a) Using ggplot2 plot a scatter plot of GDP against life expectancy.
+1. a) Using **ggplot2**, plot a scatter plot of **GDP** against **life expectancy**.
 
-1. b) Now modify the plot to show how life expectancy has changed over time.
+1. b) Now modify the plot to show how **life expectancy** has changed over **time**.
 
-1. c) Now colour code to the points to show continent.
+1. c) Now colour code to the points to show **continent**.
 
-2. Scatter plot might not be the best option for showing change over time. Change it to a line plot. Hint: you probably want to consider a new argument 'group'.
+2. Scatter plot might not be the best option for showing change over time. Change it to a **line plot**. Hint: you probably want to consider a new argument **'group'**.
 
+### Recap & reflect
+
+Consider the material we have covered today: 
+* Are all concepts clear?
+* Are you confident you could apply them to your data?
+* Are there any other tools you feel you need?
+* What section did you find the most difficult?
+* What content may you need more support with?
 
 
 
