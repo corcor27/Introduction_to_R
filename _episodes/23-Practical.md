@@ -10,7 +10,7 @@ objectives:
 - "Able to subset data"
 - "Able to manipulate data"
 - "Able to manipulate flow control"
-- "Able to plot"
+- "Able to plot simple plots"
 
 keypoints:
 - "Solving problems with R and RStudio will improve your skills and confidence"
@@ -93,6 +93,10 @@ Hint: ?unique() may be helpfull here.
 1. Use an **if()** statement to print a suitable message reporting whether there are any records from 2002 in the gapminder dataset.
 
 Hint: It is not essential but you might find ?any() helpful.
+
+2. Modify your code to remove hardcoded variables so that you can provide any year to be checked.
+
+3. Now modify your code so you can check two years at the same time.
 
 ### Create a function 
 
