@@ -10,13 +10,9 @@ objectives:
 keypoints:
 - "Solving problems with R and RStudio will improve your skills and confidence"
 ---
-
-
-## Set up a new project.
+### Set up a new project.
 
 Create a new project and new script. Add a data folder to the project and place the gapminder_data.csv in the data folder. Load the gapminder_data.csv into R.
-
-
 ### Inspect the data.
 
 Find:
@@ -26,6 +22,16 @@ Find:
 4. The data type of each attribute
 5. What are the values for the first 10 records. 
 6. What are the values for the last record in the dataset.
+
+### Create a function 
+
+define a function that calculates the Gross Domestic Product of a nation from the data available in our dataset
+
+
+### Add defensive programming
+
+
+
 
 ### Correct these common subsetting errors.
 
@@ -91,15 +97,25 @@ Hint: ?unique() may be helpfull here.
 Hint: It is not essential but you might find ?any() helpful.
 
 
+### Manipulating data
+
+1. Make a new column in the gapminder data frame that contains population in units of millions of people.
+
+2. 
+
 ### Plotting
 
-1. Using ggplot2 plot a scatter plot of GDP against life expectancy.
+1. a) Using ggplot2 plot a scatter plot of GDP against life expectancy.
 
-2. Now modify the plot to show how life expectancy has changed over time.
+1. b) Now modify the plot to show how life expectancy has changed over time.
 
-3. Now colour code to the points to show continent.
+1. c) Now colour code to the points to show continent.
 
-4.  
+2. Scatter plot might not be the best option for showing change over time. Change it to a line plot. Hint: you probably want to consider a new argument 'group'.
+
+
+
+
 
 
 
