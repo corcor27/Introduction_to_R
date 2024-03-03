@@ -5,7 +5,7 @@ exercises: 10
 questions:
 - "How do I access the data stored in data frames?"
 objectives:
-- "Understand the fundemetnals of addressing data frames."
+- "Understand the fundamentals of addressing data frames."
 keypoints:
 - "The complexity of the process is related to the complexity of the conditions for retrieving the data you want. "
 ---
@@ -309,4 +309,4 @@ With this we will get all columns not in the list.
 
 ### Many more options
 
-The complexity of subsetting data is going to depend on the task at hand. The scope of this session does not allow us to explore all eventualities but should give you a base understanding of how to effectively subset your data. There are also packages designed specifically for manipulating data frames (e.g.,plyr, dplyr and tidyr). Allthough it is possible to achieve similar results using base R functions, these packages provide a more efficient and convenient way to work with data, especially for tasks involving data manipulation, summarization, and reshaping. 
+The complexity of subsetting data is going to depend on the task at hand. The scope of this session does not allow us to explore all eventualities but should give you a base understanding of how to effectively subset your data. There are also packages designed specifically for manipulating data frames (e.g.,plyr, dplyr and tidyr). Although it is possible to achieve similar results using base R functions, these packages provide a more efficient and convenient way to work with data, especially for tasks involving data manipulation, summarization, and reshaping. 

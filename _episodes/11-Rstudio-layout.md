@@ -9,7 +9,7 @@ objectives:
 - "Be familiar with the panes contained within RStudio"
 - "Be confident creating a new project and new script files"  
 keypoints:
-- "R and RStudio are not the same thing. RStudio is an IDE that provides you with a convinient way to manage R projects and R is the underlying language that enables RStudio."
+- "R and RStudio are not the same thing. RStudio is an IDE that provides you with a convenient way to manage R projects and R is the underlying language that enables RStudio."
 - "You will not learn everything about R or RStudio in a day, there are a huge number of tools available to you in RStudio. The more time you commit to exploring and practicing the more you will achieve."
 - "Project management is a vital part of ensuring that you are producing maintainable, sharable, and robust software."
 ---

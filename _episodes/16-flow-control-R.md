@@ -4,7 +4,7 @@ teaching: 25
 exercises: 5
 questions:
 - "How do we get our code to react dynamically?"
-- "How do we delegate repetative task and decisions?"
+- "How do we delegate repetitive task and decisions?"
 - "How do we make our software robust to a wider set of use cases?"
 objectives:
 - "Understand the role of flow control in managing the order of statement execution."
@@ -97,7 +97,7 @@ Our code now reacts differently to different input values. You can combine ‘if
 
 ### Comparison operators
 
-We have encountered ‘==’, it is used to check for equivalence. Thare are other comparison operators available to us.
+We have encountered ‘==’, it is used to check for equivalence. There are other comparison operators available to us.
 
 * ‘**<**’ Less than 
 
@@ -260,14 +260,14 @@ We now have our old conditional statements inside a new conditional statement. T
 Now you have three variables **storm, temp_reading** and **rainfall**. You can modify the values and see how this changes the order statements are executed in a program.
 
 >## Question
-> ***What do you think might be probomatic about this example?***   
+> ***What do you think might be problematic about this example?***   
 >There a several concerns that you may have. The ones I want to draw your attention to are
 1. No defensive programming – What happens if we ‘accidently’ switch temp_reading and storm variables?
 2. Hardcoded variables – Should a user preference be hard coded, what implications might this have? 
-3. Redundancy - When we have repetition in code it can lead to problems with updating (e.g., if we want to make a chanje we must edit code in multiple places, this could easily introduce errors).
+3. Redundancy - When we have repetition in code it can lead to problems with updating (e.g., if we want to make a change we must edit code in multiple places, this could easily introduce errors).
 {: .callout}
 
-We will look at these issue in more detail and consider ways to fix them as we go through more examples.
+We will look at these issues in more detail and consider ways to fix them as we go through more examples.
 
 ### Logical operators
 
@@ -290,26 +290,44 @@ day = "sunday"
 
  
 ```
-if (storm == TRUE && (day == "saturday" || day == "sunday")){ #a storm won't stop me from working mon-fri
-    print("stay at home") 
+if (storm == FALSE && (day == "monday" || day == "tuesday"|| day == "wednesday" || day == "thursday" || day == "friday")){ #only a storm will stop me from working mon-fri
+  print("go to work") 
 }else{
-    print("go to work")
+  print("stay at home")
 }
 ```
 {: .language-r}
 
 {% include links.md %}
 
-This may look more complicated, but we are stringing the conditionals we already considered with logical operators (i.e., IF storm is true AND the day is (Saturday OR Sunday)).
+This may look more complicated, but we are combining the conditionals we have already considered but now with logical operators (i.e., IF no storm AND the day is (Monday to Friday)).
 
 >## Question
 > ***What do you think the consequence of removing the brackets will be?***  
->Hint: Change storm <- FALSE, day <- "sunday".  
+>Hint: Change storm <- TRUE, day <- "wednesday".  
 >What happens?  
 >What should happen?
 {: .callout}  
 
 > You need to ensure that you are explicit with the conditional operations by using brackets, this will allow you to combine without encountering unwanted behaviour.
+
+One direction we can take this is to reduce the number of logical operators. We could change the code to:
+
+```
+working_days <- c("monday","tuesday","wednesday","thursday", "friday") 
+```
+{: .language-r}
+
+Then we could use '%in%' (worth checking '%in%' through the help menu):
+
+```
+if (storm == FALSE && day %in% working_days){ #only a storm will stop me from working mon-fri
+  print("go to work") 
+}else{
+  print("stay at home")
+}
+```
+{: .language-r}
 
 We have covered a brief introduction to the basic building blocks of flow control. Hopefully you have grasped, with the few tools we have considered, that you can develop sophisticated flow control. There are more tools to consider to be fully competent on all aspects of flow control. However, they fall outside of the scope of this course.    
 

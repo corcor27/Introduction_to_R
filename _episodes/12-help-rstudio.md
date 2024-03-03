@@ -9,7 +9,7 @@ objectives:
 - "Know where to look for answers and how to ask the right questions"
 keypoints:
 - "You will get stuck at some point, needing help is a case of when not if."
-- "Help is available put is is important you have done your due diligence and are asking for help in the correct places and in the correct format."
+- "Help is available, but it is important you have done your due diligence and are asking for help in the correct places and in the correct format."
 ---
 
 ## What do I do when I need help?
@@ -76,7 +76,7 @@ sessionInfo()
 
 Here we provide some external links providing useful references and cheat sheets for new users of R. Without context they may seem a little daunting but as your knowledge and confidence grows they will become useful references.
 
-[R help refrences](https://www.statmethods.net/)  
+[R help references](https://www.statmethods.net/)  
 
 [R beginner's cheat sheets](https://www.datacamp.com/cheat-sheet/getting-started-r)
 

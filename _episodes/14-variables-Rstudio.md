@@ -52,7 +52,7 @@ The variables x and y should now have populated your environment screen. We can 
 
 >## Syntax note
 > ***Multiple ways to assign***  
->You may notice we used two different ways to define variables. The convention in R is to use ‘<-‘. In most other languages ‘=’ is the convention. They are interchangeable in R, but it is best practice to use ‘<-‘. From now on we will only use '<-' but be aware you might see '=' asignment in other sources. 
+>You may notice we used two different ways to define variables. The convention in R is to use ‘<-‘. In most other languages ‘=’ is the convention. They are interchangeable in R, but it is best practice to use ‘<-‘. From now on we will only use '<-' but be aware you might see '=' assignment  in other sources. 
 {: .callout}
 
 {% include figure.html max-width="100%" file="/fig/environmentVars.png" 
@@ -60,7 +60,7 @@ alt="RStudio environment pane showing newly declared variables" caption="Figure 
 
 
 
-### Delcare more variables:
+### Declare more variables:
 Let's add a few other variables of different variable types, Try:
 
 ```
@@ -225,7 +225,7 @@ We find that x is a double. Even though the value 5 is an integer, R stores it a
 a <- 5L
 ```
 {: .language-r}
-We can let R know at decleration that we want the value as an integer.
+We can let R know at declaration that we want the value as an integer.
 
 ```
 x <- as.integer(x)
@@ -256,5 +256,5 @@ typeof(x)
 
 ### Summary
 
-Most of the time data types will not be of great concern to you. However, it is worth remembering that when you ask R to read and organise data, unless you are explicity, you are asking it to make assumptions on the data types. Sometimes those assumptions can be wrong and could lead to unexpected outcomes. We will consider this in more detail later in the course. 
+Most of the time data types will not be of great concern to you. However, it is worth remembering that when you ask R to read and organise data, unless you are explicitly, you are asking it to make assumptions on the data types. Sometimes those assumptions can be wrong and could lead to unexpected outcomes. We will consider this in more detail later in the course. 
 

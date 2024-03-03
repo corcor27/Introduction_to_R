@@ -14,7 +14,7 @@ keypoints:
 
 ### Exploring functions
 
-So far, we have been using in-built functions. For exmaple you type ‘sqrt()’ place your value (argument/parameters) into the function, some magic happens, and it returns an output. We will now start to the structure of functions and how we can create our own.  
+So far, we have been using in-built functions. For example you type ‘sqrt()’ place your value (argument/parameters) into the function, some magic happens, and it returns an output. We will now start to the structure of functions and how we can create our own.  
 
 ### Function structure 
 
@@ -68,7 +68,7 @@ celc_to_fahr(14)
 ```
 {: .output}
 
-If you have generalised functions that you use often in different scripts. It is good practice to store them in a script file. You can then import them into any project that you need them for. This reduces rewriting and editing code, and reduces the chance of you introducting errors (e.g., typos, caluclation errors, etc.).
+If you have generalised functions that you use often in different scripts. It is good practice to store them in a script file. You can then import them into any project that you need them for. This reduces rewriting and editing code, and reduces the chance of you introducing errors (e.g., typos, calculation errors, etc.).
 
 If we want to run this method on multiple variables, we can use the sapply() method. This method takes data and a function. It then applies the function to every variable from the data you provided. 
 

@@ -3,10 +3,10 @@ title: "Calculating in RStudio"
 teaching: 5
 exercises: 5
 questions:
-- "How do we process mathmatical operations in RStudio?"
+- "How do we process mathematical  operations in RStudio?"
 objectives:
-- "Become familiar with mathmatical operators and in-built functions in RStudio."
-- "Become confident using the console to run mathmatical operations."
+- "Become familiar with mathematical  operators and in-built functions in RStudio."
+- "Become confident using the console to run mathematical  operations."
 - "Understand the order of operations."
 keypoints:
 - "***PEDMAS***"
@@ -132,7 +132,7 @@ To make this concept clearer, try:
 
 Using brackets we have manipulated the order of operations to perform the addition before the division. Be conscious of how you structure your mathematical operations to ensure the desired results but also readability of your code. 
 
-### Mathmatical Functions
+### Mathematical  Functions
 
 Base R provides you with a range of built in mathematical functions. If you need a fairly common operation there is a good chance it already exists. Let's look at a few examples, try:
 

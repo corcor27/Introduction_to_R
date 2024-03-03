@@ -115,7 +115,7 @@ temperatures[-3]
 
 ### Vectorisation
 
-We tried out some in-built mathmatical functions on our variables earlier in the course. Lets try some on our vectors:
+We tried out some in-built mathematical functions on our variables earlier in the course. Lets try some on our vectors:
 
 ```
 mean(temperatures) 
@@ -193,7 +193,7 @@ We have explicitly told R to save the output back into the 'temperatures' vector
 ### Make changes but only to specific items.
 
 Sometimes we may only want to change certain variables in a vector based on their value. 
-**Exammple:** Find all the variables that are higher than 80 Fahrenheit and increase them by 10.  
+**Example:** Find all the variables that are higher than 80 Fahrenheit and increase them by 10.  
 First we need to find out which variables fit our requirement  
 ```
 above_70 <- temperatures > 70 
@@ -215,6 +215,3 @@ temperatures[above_70] <- temperatures[above_70] + 10
 Check the results in your environment pane they should be modified. This is an example of how we can modify vectors but there are many different ways to address and manipulate vectors based on your required output.
 
 
-
-
-{% include links.md %}

@@ -14,7 +14,7 @@ keypoints:
 
 ### Lists
 
-We will take a brief look at lists. At first glance may seem very similar to vectors but we are going to cover some key differences. 
+We will take a brief look at lists. At first glance they may seem very similar to vectors but we are going to cover some key differences. 
 1. Lists can hold different data types they are not restricted to a single data type like vectors
 2. They also can hold vectors. matrices, and even other lists which allows them to assume more complicated and hierarchical structures than vectors.  
 
@@ -91,6 +91,3 @@ Data frames are a great structure to store and manipulate tabular data. They are
 alt="Variable, vector, list and dataframe visual representation" caption="Figure 1: Visual representation of how variable types are stored in the different data structures we have explored." %}
 
 
-
-
-{% include links.md %}

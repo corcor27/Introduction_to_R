@@ -6,5 +6,5 @@ permalink: /setup/
 
 ## Setup
 
-Setup was completed through worksheet prior to course commencement. 
+Setup was completed through [this worksheet](../fig/introtoR.pdf) prior to course commencement.
 

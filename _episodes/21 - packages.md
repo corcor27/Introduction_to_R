@@ -9,7 +9,7 @@ objectives:
 - "Can install and load packages."
 - "Understands how to find help with packages."
 keypoints:
-- "There are many packages with a wide range of features, becoming adept at utlilsiing packages is key to getting the most out of R"
+- "There are many packages with a wide range of features, becoming adept at utilising packages is key to getting the most out of R"
 ---
 
 Packages extend the functionality of base R by providing additional functions, datasets, and tools for specific tasks or domains. It is important that you are conscious that there may be specific versions of the R language and package versions required to use multiple packages simultaneously (version compatibility). It is recommended that you keep packages up to date wherever possible as new versions normally include bug fixes, performance improvements and new features. We should have already installed all the packages that we need for this course based of the pre-worksheet. However, as a reminder:

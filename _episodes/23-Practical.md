@@ -83,9 +83,9 @@ return an error?
 
 2. Create a new data.frame called gapminder_small that only contains rows 1 through 9 and 19 through 23. You can do this in one or two steps?
 
-3. Selecting elements of a vector that match any of a list of components is a very common data analysis task. For example, the gapminder data set contains country and continent variables, but no information between these two scales. Suppose we want to pull out information from southeast Asia. How do we set up an operation to produce a logical vector that is TRUE for all of the countries in southeast Asia and FALSE otherwise? For this questins we would consider Myanmar, hailand, Cambodia, Vietnam, and Laos as SE asia. (advanced)
+3. Selecting elements of a vector that match any of a list of components is a very common data analysis task. For example, the gapminder data set contains country and continent variables, but no information between these two scales. Suppose we want to pull out information from southeast Asia. How do we set up an operation to produce a logical vector that is TRUE for all of the countries in southeast Asia and FALSE otherwise? For this question we would consider Myanmar, Thailand, Cambodia, Vietnam, and Laos as SE Asia. (advanced)
 
-Hint: ?unique() may be helpfull here.
+Hint: ?unique() may be helpful here.
 
 
 ### Include flow control
@@ -104,7 +104,7 @@ Define a function that calculates and returns the Gross Domestic Product of a na
 
 Now modify your function so that it returns the GDP as a new column on the data set.
 
-Now modify your function so that if given a country **or** a year it returns just the data for this selection (e.g., You could specify 'Australia' and get back all years for Australia, you could specifiy '2007' and get all countries in 2007, or you could specify 'Australia' in '2007' and just recieve the data for Australia in 2007).
+Now modify your function so that if given a country **or** a year it returns just the data for this selection (e.g., You could specify 'Australia' and get back all years for Australia, you could specify '2007' and get all countries in 2007, or you could specify 'Australia' in '2007' and just receive the data for Australia in 2007).
 
 
 ### Add defensive programming
