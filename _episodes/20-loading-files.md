@@ -24,7 +24,7 @@ Place it in a folder (name the folder ‘data’) and change the file permission
 To load our file, in the console, type:
 
 ```
-gapminder <- read.csv(“data/gapminder_data.csv")
+gapminder <- read.csv("data/gapminder_data.csv")
 ```
 {: .language.r}
 
