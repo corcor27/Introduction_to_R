@@ -156,7 +156,7 @@ iris [, c] #col number
 Returns the contents of column 3.
 
 ```
-iris [r, ] 'row number'
+iris [r, ] #row number
 ``` 
 {: .language.r}
 
