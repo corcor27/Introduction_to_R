@@ -149,14 +149,14 @@ iris [3, 3]
 The syntax iris \[row_index, column_index\]. So this returns the item in the 3rd row and in the 3rd column.
 
 ```
-iris [, r]
+iris [, c] #col number
 ``` 
 {: .language.r}
 
 Returns the contents of column 3.
 
 ```
-iris [3, ]
+iris [r, ] 'row number'
 ``` 
 {: .language.r}
 

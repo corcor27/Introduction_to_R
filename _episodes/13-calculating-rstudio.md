@@ -17,7 +17,7 @@ keypoints:
 We have covered some relatively dry theory so let’s take some small steps and start interacting with R. From the console we can start exploring calculation. Write in the following commands:
 
 ```
-10 – 5 #(subtraction) 
+10 - 5 #(subtraction) 
 ```
 {: .language-r}
 

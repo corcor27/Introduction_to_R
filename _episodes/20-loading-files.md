@@ -18,7 +18,7 @@ Getting your data into R is the first step to you doing something interesting wi
 
 Place it in a folder (name the folder ‘data’) and change the file permissions of the dataset to read only. The easiest way to achieve this is to find the document in your file management system, inspect its properties and apply read only. 
 
->Note: You can also do this through the terminal (in the console pane) using ‘attrib +r’ for windows or ‘chomd 444’ for linux/mac. 
+>Note: You can also do this through the terminal (in the console pane) using ‘attrib +r’ for windows or ‘chmod 444’ for linux/mac. 
 >This is only recommended if you have prior experience working in the command line.
 
 To load our file, in the console, type:
