@@ -35,9 +35,6 @@ ggplot(data = df_iris, mapping = aes(x = PetalLengthCm, y = PetalWidthCm)) +
 ```
 {: .language.r}
 
-{% include figure.html max-width="100%" file="/fig/scatterplot.png" 
-alt="Scatterplot in RStudio" caption="Figure 1: Output plot that we have generated using ggplot2" %}
-
 
 There is a fair amount to unpack here so we will take it section by section. 
 1.	*data = df_iris* : is the data we are providing.
