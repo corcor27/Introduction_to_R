@@ -29,7 +29,7 @@ library(ggplot2)
 
 
 ```
-ggplot(data = df_iris, mapping = aes(x = PetalLengthCm, y = PetalWidthCm)) +
+ggplot(data = iris, mapping = aes(x = Petal.Length, y = Petal.Width)) +
 	geom_point()
 
 ```
