@@ -193,7 +193,7 @@ We have explicitly told R to save the output back into the 'temperatures' vector
 ### Make changes but only to specific items.
 
 Sometimes we may only want to change certain variables in a vector based on their value. 
-**Example:** Find all the variables that are higher than 80 Fahrenheit and increase them by 10.  
+**Example:** Find all the variables that are higher than 70 Fahrenheit and increase them by 10.  
 First we need to find out which variables fit our requirement  
 ```
 above_70 <- temperatures > 70 
