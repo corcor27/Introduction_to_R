@@ -83,4 +83,4 @@ which gives us:
 {: .output}
 
 Here we have just done some simple statics on the iris dataset. In the actually course we will be doing some more complicated methods that involve statistical tests. Therefore, it might be a good idea to have a quick look at the online guide of functions that you could use. Please see: 
-<mark> https://stat.ethz.ch/R-manual/R-devel/RHOME/library/stats/html/00Index.html
+<HTML> https://stat.ethz.ch/R-manual/R-devel/RHOME/library/stats/html/00Index.html
