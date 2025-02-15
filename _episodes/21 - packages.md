@@ -48,7 +48,7 @@ library("stats)
 ```
 {: .language.r}
 
-Now that you have the stats package loaded in, lets do some simple statistical analysis to find the median, mean and Inter-quartile Range  of a feature from the iris dataset. Firstly, as previously covered lets load in the iris dataset. 
+Now that you have the stats package loaded in, lets do some simple statistical analysis to find the median, mean and Inter-quartile Range (IQR) of a feature from the iris dataset. Firstly, as previously covered lets load in the iris dataset. 
 
 ```
 iris
@@ -68,7 +68,7 @@ which gives us:
 ```
 {: .output}
 
-Next find the mode and mean for the same feature:
+Next find the mean and IQR for the same feature:
 
 ```
 mean(iris$Sepal.Length)
