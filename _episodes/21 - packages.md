@@ -39,6 +39,8 @@ vignette("ggplot2")
 ```
 {: .language.r}
 
+### Testing stats package
+
 For this course one of the most common packages that you will require is called "stats", which is a inbuilt library already available in R studio by default. Now have ago at loading in the package. 
 
 ```
