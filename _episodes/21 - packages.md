@@ -38,3 +38,49 @@ Many packages come with vignettes (tutorials and extended example documentation)
 vignette("ggplot2")
 ```
 {: .language.r}
+
+For this course one of the most common packages that you will require is called "stats", which is a inbuilt library already available in R studio by default. Now have ago at loading in the package. 
+
+```
+library("stats) 
+```
+{: .language.r}
+
+Now that you have the stats package loaded in, lets do some simple statistical analysis to find the median, mean and Inter-quartile Range  of a feature from the iris dataset. Firstly, as previously covered lets load in the iris dataset. 
+
+```
+iris
+```
+{: .language.r}
+
+Now lets find the median of the feature Sepal length.
+
+```
+median(iris$Sepal.Length)
+```
+{: .language.r}
+which gives us:
+
+```
+5.8
+```
+{: .output}
+
+Next find the mode and mean for the same feature:
+
+```
+mean(iris$Sepal.Length)
+IQR(iris$Sepal.Length)
+```
+{: .language.r}
+
+which gives us:
+
+```
+5.843333
+1.3
+```
+{: .output}
+
+Here we have just done some simple statics on the iris dataset. In the actually course we will be doing some more complicated methods that involve statistical tests. Therefore, it might be a good idea to have a quick look at the online guide of functions that you could use. Please see: 
+<mark> https://stat.ethz.ch/R-manual/R-devel/RHOME/library/stats/html/00Index.html
