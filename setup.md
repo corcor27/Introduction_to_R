@@ -39,10 +39,10 @@ If everything has gone smoothly you should now be able to open RStudio and be pr
 {% include figure.html max-width="100%" file="/fig/setup1.png" alt="RStudio pane layout on first initialisation" caption="RStudio layout you should expect to see (OS and version dependant)" %}
 
 ## Section 2 – First steps
-Familiarise yourself with the RStudio layout
->The interactive R console/Terminal (entire left)
->Environment/History/Connections (tabbed in upper right)
->Files/Plots/Packages/Help/Viewer (tabbed in lower right) 
+>**Familiarise yourself with the RStudio layout**
+>*The interactive R console/Terminal (entire left)
+>*Environment/History/Connections (tabbed in upper right)
+>*Files/Plots/Packages/Help/Viewer (tabbed in lower right) 
 
 
 We will explore this in more detail during our introduction session. 
