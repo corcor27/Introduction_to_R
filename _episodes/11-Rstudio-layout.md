@@ -80,7 +80,7 @@ Typical problems caused by poor project management.
 
 1. ***Poor maintainability*** – You may remember the ad-hoc system you used for naming and organising files and folders but when you come back to a project a week, a month, or a year later will you still remember? If someone is collaborating with you will it make any sense to them? 
 
-2. ***Data corruption*** – Defensive steps (e.g., naming convention, back-ups, read only files) will protect your data. It can be very easy to accidently modify data that should be static. Losing/corrupting data can be catastrophic for projects.
+2. ***Data corruption*** – Defensive steps (e.g., naming convention, back-ups, read only files) will protect your data. It can be very easy to accidentally modify data that should be static. Losing/corrupting data can be catastrophic for projects.
 
 
 ### Question: What practices should we apply when it comes to project management?
@@ -88,7 +88,7 @@ There is no ‘best’ way to manage a project, there are general principles tha
 
 1. ***Segment files sensibly:*** Create clearly labelled folders/sub-folders to group similar files. This will make finding and identifying files easier.  
 
-2. ***Read only data:*** Any original data should be read-only so it cannot be accidently modified.  
+2. ***Read only data:*** Any original data should be read-only so it cannot be accidentally modified.  
 
 3. ***Separate functions:*** Separating the project specific code from more generic code that could be reused in other projects will improve your efficiency when starting new projects.  
 
