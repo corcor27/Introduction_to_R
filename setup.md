@@ -40,9 +40,9 @@ If everything has gone smoothly you should now be able to open RStudio and be pr
 
 ## Section 2 – First steps
 >**Familiarise yourself with the RStudio layout**
->*The interactive R console/Terminal (entire left)
->*Environment/History/Connections (tabbed in upper right)
->*Files/Plots/Packages/Help/Viewer (tabbed in lower right) 
+>* The interactive R console/Terminal (entire left)
+>* Environment/History/Connections (tabbed in upper right)
+>* Files/Plots/Packages/Help/Viewer (tabbed in lower right) 
 
 
 We will explore this in more detail during our introduction session. 
@@ -138,11 +138,14 @@ ggplot(data, aes(x = x, y = y)) +  geom_point()
 
 {% include figure.html max-width="100%" file="/fig/setup5.png" alt="Tesing in Rstudio" caption="Testing package installs" %}
 
+
 To give some context to those who are using R for the first time. The # signifies a note, it is a line that will not be treated as R language and is used to give explanation (to yourself and to others who might read your code) about what the following lines of code are doing. For the moment we are not going to consider any of the lines of code we are just going to trust the process and run the script by pressing Ctrl + Enter, or Ctrl + Alt + r (Linux or Mac OS) and Ctrl + Shift + Enter (on Windows OS). 
 
 If everything is correct you should notice two things. Firstly, you should be provided with a scatter plot in the plotting window (bottom right). Secondly, you should see that the lines in the script window have been processed in the console (bottom left). Your output should match the image provided.
 
 {% include figure.html max-width="100%" file="/fig/setup6.png" alt="showing plots of testing" caption="showing plots of testing" %}
+
+
 
 You can now save you script by pressing the save symbol on the script pane. Name it something sensible like ‘simplePlotExample’. 
 
