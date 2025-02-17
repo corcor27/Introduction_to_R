@@ -37,7 +37,7 @@ Note: If this is the first-time installing R and RStudio you may be asked some s
 If everything has gone smoothly you should now be able to open RStudio and be presented with a screen that looks something similar (dependant on your OS) to the image you see below. If that checks out, you can move on to section 2. 
 
 {% include figure.html max-width="100%" file="/fig/setup1.png" alt="RStudio pane layout on first initialisation" caption="RStudio layout you should expect to see (OS and version dependant)" %}
-
+<br>
 ## Section 2 – First steps
 >**Familiarise yourself with the RStudio layout**
 >* The interactive R console/Terminal (entire left)
@@ -59,7 +59,7 @@ Reminder: This worksheet is not exploring concepts in detail; our aim is to ensu
 Followed by the return key (enter key). You should now have something that looks like this
 
 {% include figure.html max-width="100%" file="/fig/setup2.png" alt="RStudio result of Task1" caption="Displaying result of Task1 in Rstudio" %}
-
+<br>
 ### Task 2 – Now try these three commands, type them separately, complete each line with enter
 
 ```
@@ -72,7 +72,7 @@ sin(1)
 {: .language.r}
 
 {% include figure.html max-width="100%" file="/fig/setup3.png" alt="RStudio result of Task2" caption="Displaying result of Task2 in Rstudio" %}
-
+<br>
 This is an extremely brief introduction to inbuilt functions and variables. Hopefully these inputs are decipherable to you and the results are not surprising. You should see an output for all inputs (see screenshot). 
 
 ### Task 3 – Set up a project
@@ -103,7 +103,7 @@ You may get a warning message related to Rtools. This is normal and should not o
 {: .output}
 
 {% include figure.html max-width="100%" file="/fig/setup4.png" alt="showing installed packages" caption="Showing the install of packages" %}
-
+<br>
 ```
 Note: if this is not your first time using RStudio and ggplot2 you do not need to run this line. If you do you will get a relatively short message informing you the packaged has been successfully unpacked. 
 ```
@@ -137,16 +137,14 @@ ggplot(data, aes(x = x, y = y)) +  geom_point()
 {: .language.r}
 
 {% include figure.html max-width="100%" file="/fig/setup5.png" alt="Tesing in Rstudio" caption="Testing package installs" %}
-
+<br>
 
 To give some context to those who are using R for the first time. The # signifies a note, it is a line that will not be treated as R language and is used to give explanation (to yourself and to others who might read your code) about what the following lines of code are doing. For the moment we are not going to consider any of the lines of code we are just going to trust the process and run the script by pressing Ctrl + Enter, or Ctrl + Alt + r (Linux or Mac OS) and Ctrl + Shift + Enter (on Windows OS). 
 
 If everything is correct you should notice two things. Firstly, you should be provided with a scatter plot in the plotting window (bottom right). Secondly, you should see that the lines in the script window have been processed in the console (bottom left). Your output should match the image provided.
 
 {% include figure.html max-width="100%" file="/fig/setup6.png" alt="showing plots of testing" caption="showing plots of testing" %}
-
-
-
+<br>
 You can now save you script by pressing the save symbol on the script pane. Name it something sensible like ‘simplePlotExample’. 
 
 Congratulations, that is the end of the technical sections of this worksheet. If you have no experience of R or programming, you may feel like you have more questions than answers at this point. This is understandable, as previously stated this worksheet is a preparation exercise to ensure you are ready for the course. If you were unable to complete any of the exercises, please contact cot13@aber.ac.uk before the course commencement data and we will assist. 
